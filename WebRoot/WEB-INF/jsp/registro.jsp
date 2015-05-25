@@ -135,7 +135,7 @@
         			
         			
         			<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledBy="profile-tab">
-          				<form class="form-horizontal" id="registro2" onsubmit="return myFunction()" action="/RuidoVivo/registros" method="post">
+          				<form class="form-horizontal" id="registro2" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/login.htm">
 
             				<div class="center">        
                 				<h2>Registro de Banda</h2>
@@ -145,29 +145,29 @@
             				<div class="form-group">
               					<label for="nombre" class="col-sm-2 control-label">Nombre</label>
               					<div class="col-sm-10">
-                					<input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de la Banda" required autofocus>
+                					<input type="text" name="dateG" class="form-control" id="nombre" placeholder="Nombre de la Banda" required autofocus>
               					</div>
             				</div>
             				<div class="form-group">
               					<label for="informacion" class="col-sm-2">Información </label>
-                				<textarea class="form-control textarea-registro" name="informacion" class="form-control" id="informacion" placeholder="Información de la banda" rows=8></textarea>
+                				<textarea class="form-control textarea-registro" name="dateG" class="form-control" id="informacion" placeholder="Información de la banda" rows=8></textarea>
             				</div>
             				<div class="form-group">
               					<label for="logo" class="col-sm-2 control-label">Logo de la banda </label>
               					<div class="col-sm-10">
-                					<input type="file" name="logo" class="form-control" id="logo" accept="image/*">
+                					<input type="file" name="dateG" class="form-control" id="logo" accept="image/*">
               					</div>
             				</div>
             				<div class="form-group">
-              					<label for="contrasena" class="col-sm-2 control-label">Contraseña </label>
+              					<label for="dateG" class="col-sm-2 control-label">Contraseña </label>
               					<div class="col-sm-10">
-                					<input type="password" name="contrasena" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=8>
+                					<input type="password" name="dateG" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=8>
               					</div>
             				</div>
             				<div class="form-group">
               					<label for="ccontrasena" class="col-sm-2 control-label">Confirmar Contraseña </label>
               					<div class="col-sm-10">
-                					<input type="password" name="ccontrasena" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" required minlength=8>
+                					<input type="password" name="dateG" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" required minlength=8>
               					</div>
             				</div>
             				<div class="form-group">

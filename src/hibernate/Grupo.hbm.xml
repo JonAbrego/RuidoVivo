@@ -19,6 +19,9 @@
         <property name="logo" type="java.lang.String">
             <column name="logo" length="65535" />
         </property>
+        <property name="contrasena" type="java.lang.String">
+            <column name="contrasena" length="12" />
+        </property>
         <set name="participanteses" inverse="true">
             <key>
                 <column name="idGrupo" />

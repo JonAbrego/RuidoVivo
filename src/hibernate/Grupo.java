@@ -16,6 +16,7 @@ public class Grupo implements java.io.Serializable {
 	private String nombre;
 	private String informacion;
 	private String logo;
+	private String contrasena;
 	@SuppressWarnings("rawtypes")
 	private Set participanteses = new HashSet(0);
 	@SuppressWarnings("rawtypes")
@@ -34,13 +35,22 @@ public class Grupo implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	/** full constructor */
-	@SuppressWarnings("rawtypes")
-	public Grupo(String nombre, String informacion, String logo,
-			Set participanteses, Set seguirs, Set integranteses) {
+	public Grupo(String nombre, String informacion, String logo,String contrasena){
 		this.nombre = nombre;
 		this.informacion = informacion;
 		this.logo = logo;
+		this.contrasena = contrasena;		
+	}
+	
+	/** full constructor */
+	@SuppressWarnings("rawtypes")
+	public Grupo(String nombre, String informacion, String logo,
+			String contrasena, Set participanteses, Set seguirs,
+			Set integranteses) {
+		this.nombre = nombre;
+		this.informacion = informacion;
+		this.logo = logo;
+		this.contrasena = contrasena;
 		this.participanteses = participanteses;
 		this.seguirs = seguirs;
 		this.integranteses = integranteses;
@@ -78,6 +88,14 @@ public class Grupo implements java.io.Serializable {
 
 	public void setLogo(String logo) {
 		this.logo = logo;
+	}
+
+	public String getContrasena() {
+		return this.contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	@SuppressWarnings("rawtypes")

@@ -42,10 +42,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form">
-                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
+                             	<form role="form" onsubmit="return displayResult(this)">
+                                	    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo">
                                     <i class="fa fa-search fa-inverse"></i>
-                                </form>
+                            	</form>
                            </div>
                        </div>
                     </div>
@@ -94,18 +94,16 @@
 				<p class="lead">Es un Sitio Web pensada para todos los amantes de la música que disfrutan ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podrás encontrar a varios de los grupos que te gustan incluso si son bandas locales ya que cualquier grupo de cualquier género podrá registrarse.<br/>
 				Además te ofrecemos un album-calendario para que tengas un historial de los eventos a los que haz asistido.<br>
 					Así que no esperes más registrate.</p>
-				<p class="lead">It's Freee!!!.</p>
+				<p class="lead"><strong>It's Freee!!!.</strong></p>
 			</div>
 			
 			<!-- Our Skill -->
-			<div class="skill-wrap clearfix">
-			
+			<div class="skill-wrap clearfix">			
 				<div class="center wow fadeInDown">
 					<h2>Desarrollado sobre</h2>
 				</div>
 				
-				<div class="row">
-					
+				<div class="row">					
 					<div class="col-sm-2">
 						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="100ms">
 							<div class="html-skill">                                  
@@ -196,7 +194,7 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>Estudiantes de la Facultad de Ciencias</p>
 						</div>
 					</div><!--/.col-lg-4 -->
 					
@@ -208,7 +206,7 @@
 									<a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
 								</div>
 								<div class="media-body">
-									<h4>Jhon Doe</h4>
+									<h4>Jontahan Abrego</h4>
 									<h5>Founder and CEO</h5>
 									<ul class="tag clearfix">
 										<li class="btn"><a href="#">Web</a></li>
@@ -223,7 +221,7 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>Estudiante de la Facultad de Ciencias</p>
 						</div>
 					</div><!--/.col-lg-4 -->					
 				</div> <!--/.row -->
@@ -273,7 +271,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
-    <script>
+      <script>
         $(function() {
                 function displayResult(item) {
                     $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');

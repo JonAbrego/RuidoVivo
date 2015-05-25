@@ -96,44 +96,28 @@
         <div class="blog">
             <div class="row">
                  <div class="col-md-9">
+                    
                     <div class="blog-item">
                         <div class="row">
                              <div class="col-sm-2 text-center">
                                 <div class="entry-meta"> 
-                                    <span id="publish_date">07  NOV 2015</span>
+                                    <span id="publish_date">01  MAR 2015</span>
                                     <span><i class="fa fa-user"></i> <a href="#">Panteon Rococo</a></span>
                                     <span><i class="fa fa-user"></i> <a href="#">La Tremenda Korte</a></span>
+                                    <span><i class="fa fa-user"></i> <a href="#">Otro más</a></span>
                                     <span><i class="fa fa-user"></i><a href="#">56 Likes</a></span>
                                 </div>
                             </div>
                             <div class="col-sm-10 blog-content">
-                                <a href=""><img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" /></a>
-                                <h2><a href="blog-item.html">Consequat bibendum quam liquam viverra</a></h2>
-                                <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
+                                <a href=""><img class="img-responsive img-blog" src="images/festival.jpg" width="100%" alt="" /></a>
+                                <h2><a href="blog-item.html">"20 años de de SKA en MéxiCo"</a></h2>
+                                <h3>Con motivo a los 20 años de aparición del SKA en México ofreceremos un concierto totalmente llendo de ambiente 
+                                para todos los amantes del SKA.</h3>
+                                <a class="btn btn-primary readmore" href="#">Read More <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>    
                     </div><!--/.blog-item-->
-                        
-                    <div class="blog-item">
-                        <div class="row">
-                             <div class="col-sm-2 text-center">
-                                <div class="entry-meta"> 
-                                    <span id="publish_date">07  NOV</span>
-                                    <span><i class="fa fa-user"></i> <a href="#">John Doe</a></span>
-                                    <span><i class="fa fa-user"></i> <a href="#">2 Comments</a></span>
-                                    <span><i class="fa fa-user"></i><a href="#">56 Likes</a></span>
-                                </div>
-                            </div>
-                            <div class="col-sm-10 blog-content">
-                                <a href=""><img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" /></a>
-                                <h2><a href="blog-item.html">Consequat bibendum quam liquam viverra</a></h2>
-                                <h3>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h3>
-                                <a class="btn btn-primary readmore" href="blog-item.html">Read More <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>    
-                    </div><!--/.blog-item-->
-                        
+                                                                  
                     <ul class="pagination pagination-lg">
                         <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
                         <li class="active"><a href="#">1</a></li>
@@ -153,10 +137,7 @@
                         <div class="row">
                             <div class="col-sm-11">
                                 <ul class="blog_archieve">
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</span></a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</span></a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Mar 2015 <span class="pull-right">(1)</span></a></li>                                    
                                 </ul>
                             </div>
                         </div>                     
@@ -192,7 +173,8 @@
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
-    <script>
+      
+      <script>
         $(function() {
                 function displayResult(item) {
                     $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');

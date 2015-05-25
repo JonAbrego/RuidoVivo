@@ -30,7 +30,17 @@ public class Evento implements java.io.Serializable {
 	/** default constructor */
 	public Evento() {
 	}
+	
 
+
+	public Evento(String nombre, String descripcion, Date fecha, Double costo, String lugar){
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fecha = fecha;
+		this.costo = costo;
+		this.lugar = lugar;
+	}
+	
 	/** full constructor */
 	@SuppressWarnings("rawtypes")
 	public Evento(String foto, String nombre, String descripcion, Date fecha,
