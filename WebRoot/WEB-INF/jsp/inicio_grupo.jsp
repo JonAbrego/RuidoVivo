@@ -94,6 +94,7 @@
                                     <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Mi Perfil</a></li>
                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Historial</a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Crear evento</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Editar evento</a></li>
                                 </ul>
                             </div>
 
@@ -206,6 +207,59 @@
                                             	    	</div>
                                             	  	</div>
                                             	</form>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     
+                                     <div class="tab-pane" id="tab4">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <form class="col-md-offset-1 col-md-9 form-horizontal" id="registro1" onsubmit="return myFunction()" action="/Usuario/edit" method="post">
+
+                                                    <div class="center">        
+                                                        <h2>Editar Evento</h2>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="logo" class="col-sm-3 control-label">Logo de la banda </label>
+                                                        <div class="col-sm-9">
+                                                            <input type="file" name="logo" class="form-control" id="logo" accept="image/*" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nombre" class="col-sm-3 control-label">Nombre del Evento</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Escribe el nombre del evento" required autofocus>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="descripcion" class="col-sm-3">Descripción </label>
+                                                        <textarea class="form-control textarea-registro" name="descripcion" class="form-control" id="descripcion" placeholder="Escribe una descripcion sobre el evento" rows=8></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="fecha" class="col-sm-2 control-label">Fecha </label>
+                                                        <div class="col-sm-10">
+                                                            <input type="date" name="fecha" class="form-control" id="fecha">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="costo" class="col-sm-2 control-label">Costo </label>
+                                                        <div class="col-sm-10">
+                                                            <input type="number" step="any" name="costo" class="form-control" id="costo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lugar" class="col-sm-3 control-label">Lugar del Evento</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="lugar" class="form-control" id="lugar" placeholder="Escribe el lugar del evento">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-3 col-sm-10">
+                                                            <input type="submit" class="btn btn-primary reg" name="add" value="Registrarme">
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                      </div>
