@@ -67,14 +67,14 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="#"><a href="">Inicio</a></li>
-                        <li><a href="#">Acerca De</a></li>
+                        <li class="#"><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca De</a></li>
                         <li><a href="#">Calendario</a></li>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="${pageContext.request.contextPath}/edit.htm">EditarCuenta</a></li>                                
-                                <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
+                                <li><a href="${pageContext.request.contextPath}/principal.htm">Salir</a></li>                                                       
                             </ul>
                         </li>                       
                     </ul>
@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
-                    <h2>Bienvenido Usuario</h2> 
+                    <h2>Bienvenido ${nombre}</h2> 
                     <div class="tab-wrap">
                         <div class="media">
                             <div class="parrent pull-left">
@@ -111,18 +111,14 @@
                                                     <div id="myCarousel" class="carousel slide usuario-carousel" data-ride="carousel">
                                                         <!-- Indicadores -->
                                                         <ol class="carousel-indicators">
-                                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                                                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>                                                            
                                                         </ol>
 
                                                         <!-- Carrusel -->
                                                         <form action="EventoServlet" method="post">
                                                         <div class="carousel-inner" role="listbox">
                                                           <div class="item active">
-                                                            <img class="first-slide" src="images/slider_one.jpg" alt="First slide">
+                                                            <img class="first-slide" src="images/festival.jpg" alt="First slide">
                                                             <div class="container">
                                                               <div class="carousel-caption">
                                                                 <h1>Festival 20 años de ska.</h1>
@@ -130,47 +126,7 @@
                                                                 <p><button type="submit" class="btn btn-lg btn-primary" name="event">Ver Evento</button></p>              
                                                               </div>
                                                             </div>
-                                                          </div>
-                                                          <div class="item">
-                                                            <img class="second-slide" src="images/machaca_fest.png" alt="Second slide">
-                                                            <div class="container">
-                                                              <div class="carousel-caption">
-                                                                <h1>Machaca Fest.</h1>
-                                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                                                <p><button type="submit" class="btn btn-lg btn-primary" name="event">Ver Evento</button></p>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          <div class="item">
-                                                            <img class="third-slide" src="images/Panteon-Rococo-Arena.png" alt="Third slide">
-                                                            <div class="container">
-                                                              <div class="carousel-caption">
-                                                                <h1>XX años y queremos más...</h1>
-                                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                                                <p><button type="submit" class="btn btn-lg btn-primary" name="event">Ver Evento</button></p>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          <div class="item">
-                                                            <img class="fourth-slide" src="images/festival_20a.jpg" alt="Fourth slide">
-                                                            <div class="container">
-                                                              <div class="carousel-caption">
-                                                                <h1>Fourth example headline.</h1>
-                                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                                                <p><button type="submit" class="btn btn-lg btn-primary" name="event">Ver Evento</button></p>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          <div class="item">
-                                                            <img class="fifth-slide" src="images/festival_20a.jpg" alt="Fifth slide">
-                                                            <div class="container">
-                                                              <div class="carousel-caption">
-                                                                <h1>Fifth example headline.</h1>
-                                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                                                <p><button type="submit" class="btn btn-lg btn-primary" name="event">Ver Evento</button></p>
-                                                              </div>
-                                                            </div>
-                                                          </div>
+                                                          </div>                                                                                                                                                                                                                                        
                                                         </div>
                                                     </form>   
                                                     <!--Controles-->

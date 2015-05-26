@@ -12,13 +12,15 @@ public class OperacionesUsuario {
 	
 	Session session=null;
 	Transaction tx=null;
-		
+	
+	/*Listar los usuarios*/
 	@SuppressWarnings("unchecked")
 	public List<Usuario> login(String recibido){
 		UsuarioDAO usuario=new UsuarioDAO();
 		return usuario.findByProperty("correo", recibido);
 	}
 	
+	/*guardar nuevo usuario en la base*/
 	public void registro(Usuario usuario){
 		session=HibernateSessionFactory.getSession();
 		tx=session.beginTransaction();
@@ -26,6 +28,7 @@ public class OperacionesUsuario {
 		tx.commit();
 	}
 	
+	/*Update name*/
 	public void actualizaUsuarioName(String correo, String nuevo){
 		Session s = HibernateSessionFactory.getSession();	
 		Transaction txt=null;
@@ -37,6 +40,7 @@ public class OperacionesUsuario {
         System.out.println("Rows affected: " + rowCount);		             
 	}
 	
+	/*Update password*/
 	public void actualizaUsuarioContra(String correo, String nuevo){
 		Session s = HibernateSessionFactory.getSession();	
 		Transaction txt=null;
@@ -48,6 +52,7 @@ public class OperacionesUsuario {
         System.out.println("Rows affected: " + rowCount);		             
 	}
 	
+	/*Update email*/
 	public void actualizaUsuarioCorreo(String correo, String nuevo){
 		Session s = HibernateSessionFactory.getSession();	
 		Transaction txt=null;
@@ -58,24 +63,5 @@ public class OperacionesUsuario {
         txt.commit();  
         System.out.println("Rows affected: " + rowCount);		             
 	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Grupo> loginG(String recibido){
-		GrupoDAO grupo=new GrupoDAO();
-		return grupo.findByProperty("nombre", recibido);
-	}
-	
-	public void registroG(Grupo grupo){
-		session=HibernateSessionFactory.getSession();
-		tx=session.beginTransaction();
-		session.save(grupo);
-		tx.commit();
-	}
-	
-	public void registroE(Evento evento){
-		session=HibernateSessionFactory.getSession();
-		tx=session.beginTransaction();
-		session.save(evento);
-		tx.commit();
-	}
+					
 }

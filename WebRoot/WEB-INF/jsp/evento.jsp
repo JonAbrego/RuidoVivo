@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
+                            <li>También estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
                        <div class="social">
                             <div class="search">
                                 <form role="form" onsubmit="return displayResult(this)">
-                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo">
+                                    <input id="autocomplete" type="search" class="search-form" name="busqueda" placeholder="Busca un grupo">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
                            </div>

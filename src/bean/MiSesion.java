@@ -1,6 +1,6 @@
 package bean;
 
-public class MiSesion {
+public class MiSesion {	
 	private String usuario;
 	
 	public void setUsuario(String usuario){

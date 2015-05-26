@@ -25,6 +25,8 @@
 	p:basename="message">
 	</bean>	
 	
+	<bean id="usuario" class="bean.MiSesion" scope="session" />
+	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
  
 	<mvc:annotation-driven />

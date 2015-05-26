@@ -12,16 +12,21 @@ import bean.MiSesion;
 @RequestMapping("/principal.htm")
 
 public class PrincipalServlet {
+	
 	@Autowired
 	private MiSesion misesion;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String showTienda(){
+	public String showPrincipal(){
 		if(misesion.getUsuario()!=null){
-			return "redirect:login.htm";
+			return "login.htm";
 		}
 		return "principal";
 	}
-	
+		
+	@RequestMapping(method=RequestMethod.POST, params={"banda"})
+	public String showBanda(){
+		return "grupo";
+	}
 
 }

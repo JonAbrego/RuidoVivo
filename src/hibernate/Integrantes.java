@@ -50,5 +50,9 @@ public class Integrantes implements java.io.Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public String toString(){
+		return "-"+nombre+"\n";
+	}
 
 }

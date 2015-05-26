@@ -35,17 +35,17 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
+                            <li>También estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                             	<form role="form" onsubmit="return displayResult(this)">
-                                	    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo">
+                             	<form role="form" method="POST" action="${pageContext.request.contextPath}/principal.htm">
+                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
-                            	</form>
+                                </form>
                            </div>
                        </div>
                     </div>
@@ -91,9 +91,12 @@
         <div class="container">
 			<div class="center wow fadeInDown">
 				<h2>Acerca de Ruido Vivo</h2>
-				<p class="lead">Es un Sitio Web pensada para todos los amantes de la música que disfrutan ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podrás encontrar a varios de los grupos que te gustan incluso si son bandas locales ya que cualquier grupo de cualquier género podrá registrarse.<br/>
+				<p class="lead">Es un Sitio Web pensada para todos los amantes de la música que disfrutan 
+				ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podrás encontrar 
+				a varios de los grupos que te gustan incluso si son bandas locales ya que cualquier grupo de 
+				cualquier género podrá registrarse.<br/>
 				Además te ofrecemos un album-calendario para que tengas un historial de los eventos a los que haz asistido.<br>
-					Así que no esperes más registrate.</p>
+				Así que no esperes más registrate.</p>
 				<p class="lead"><strong>It's Freee!!!.</strong></p>
 			</div>
 			
@@ -271,7 +274,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
-      <script>
+    <script>
         $(function() {
                 function displayResult(item) {
                     $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');

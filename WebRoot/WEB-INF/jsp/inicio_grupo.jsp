@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE>
 <html lang="en">
 <head>
@@ -112,20 +114,33 @@
 	                                                		<div class="text-center">
 	                                                			<br>
 	                                                			<br>
-                                                				<h2 style="font-family:'Lato', sans-serif;color:black">Nombre de la Banda</h2>
+                                                				<h2 style="font-family:'Lato', sans-serif;color:black"> ${nombre}</h2>
                                                 			</div>
                                                 		</div>
                                                 	</div>
                                                 	<div class="row">
                                                 		<div class="col-sm-12" style="margin-top:30px;min-height:200px;font-family:'Lato', sans-serif;font-size:18px">
                                                 			<div class="center">
-                                                				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
+                                                				<p>${informacion}</p>
                                                 			</div>
                                                 		</div>
                                                 	</div>
                                                 </div>
                                                 <div class="container col-md-2">
-                                                	<p style="font-family:'Lato',sans-serif;font-size:16px;">Aqui van los integrantes</p>
+                                                	<p style="font-family:'Lato',sans-serif;font-size:16px;">
+                                                		<table border=2>
+                                                			<tr>
+                                                				<td>Integrantes</td>
+                                                			</tr>
+                                                			<c:forEach items="${integrantes}" var="integrantes">
+                                                				<tr>
+                                                					<td>
+                                                						${integrantes.nombre}
+                                                					</td>
+                                                				</tr>
+                                                			</c:forEach>
+                                                		</table>
+                                                	</p>
                                                 </div>
                                             </div>
                                         </div>

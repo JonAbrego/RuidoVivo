@@ -1,3 +1,4 @@
+
 <!DOCTYPE>
 <html lang="es">
 <head>
@@ -40,7 +41,7 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form">
+                                <form role="form" method="POST" action="${pageContext.request.contextPath}/principal.htm">
                                     <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
@@ -161,13 +162,13 @@
             				<div class="form-group">
               					<label for="dateG" class="col-sm-2 control-label">Contraseña </label>
               					<div class="col-sm-10">
-                					<input type="password" name="dateG" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=8>
+                					<input type="password" name="dateG" class="form-control" id="contrasena" placeholder="Contraseña" minlength=8 maxlength=12 required >
               					</div>
             				</div>
             				<div class="form-group">
               					<label for="ccontrasena" class="col-sm-2 control-label">Confirmar Contraseña </label>
               					<div class="col-sm-10">
-                					<input type="password" name="dateG" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" required minlength=8>
+                					<input type="password" name="dateG" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" minlength=8 maxlength=12 required >
               					</div>
             				</div>
             				<div class="form-group">
@@ -205,8 +206,31 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
-    ${ bandas }
+    <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>    
+    <script>
+        $(function() {
+                function displayResult(item) {
+                    $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');
+                }
+                $('#autocomplete').typeahead({
+                    source: [
+                        {ID: 1, Name: 'Toronto'},
+                        {ID: 2, Name: 'Montreal'},
+                        {ID: 3, Name: 'New York'},
+                        {ID: 4, Name: 'Buffalo'},
+                        {ID: 5, Name: 'Boston'},
+                        {ID: 6, Name: 'Columbus'},
+                        {ID: 7, Name: 'Dallas'},
+                        {ID: 8, Name: 'Vancouver'},
+                        {ID: 9, Name: 'Seattle'},
+                        {ID: 10, Name: 'Los Angeles'}
+                    ],
+                    displayField: 'Name',
+                    valueField: 'ID',
+                    onSelect: displayResult
+                });
+            });
+    </script>
     <script>
       function myFunction() {
         var contrasena = document.getElementById('contrasena').value;

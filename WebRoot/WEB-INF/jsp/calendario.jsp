@@ -35,15 +35,15 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
+                            <li>También estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form" onsubmit="return displayResult(this)">
-                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo">
+                           		<form role="form" method="POST" action="${pageContext.request.contextPath}/principal.htm">
+                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
                            </div>
@@ -90,7 +90,7 @@
     <section id="blog" class="container">
         <div class="center">
             <h2>Eventos</h2>
-            <p class="lead">Aqui puedes ver nuestros eventos</p>
+            <p class="lead">Aquí puedes ver nuestros eventos</p>
         </div>
 
         <div class="blog">
@@ -102,7 +102,7 @@
                              <div class="col-sm-2 text-center">
                                 <div class="entry-meta"> 
                                     <span id="publish_date">01  MAR 2015</span>
-                                    <span><i class="fa fa-user"></i> <a href="#">Panteon Rococo</a></span>
+                                    <span><i class="fa fa-user"></i> <a href="#">Panteón Rocóco</a></span>
                                     <span><i class="fa fa-user"></i> <a href="#">La Tremenda Korte</a></span>
                                     <span><i class="fa fa-user"></i> <a href="#">Otro más</a></span>
                                     <span><i class="fa fa-user"></i><a href="#">56 Likes</a></span>
@@ -110,8 +110,10 @@
                             </div>
                             <div class="col-sm-10 blog-content">
                                 <a href=""><img class="img-responsive img-blog" src="images/festival.jpg" width="100%" alt="" /></a>
-                                <h2><a href="blog-item.html">"20 años de de SKA en MéxiCo"</a></h2>
-                                <h3>Con motivo a los 20 años de aparición del SKA en México ofreceremos un concierto totalmente llendo de ambiente 
+                                <h2><a href="blog-item.html">"20 años de de SKA en México"</a></h2>
+                                <h3>Con motivo a los 20 años de aparición del 
+                                SKA en México ofreceremos un concierto totalmente 
+                                llendo de ambiente 
                                 para todos los amantes del SKA.</h3>
                                 <a class="btn btn-primary readmore" href="#">Read More <i class="fa fa-angle-right"></i></a>
                             </div>
@@ -173,8 +175,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
-      
-      <script>
+    <script>
         $(function() {
                 function displayResult(item) {
                     $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');
@@ -198,5 +199,5 @@
                 });
             });
     </script>
-</body>
-	</html>
+	</body>
+</html>

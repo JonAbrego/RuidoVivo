@@ -17,12 +17,12 @@ public class Grupo implements java.io.Serializable {
 	private String informacion;
 	private String logo;
 	private String contrasena;
-	@SuppressWarnings("rawtypes")
+	
 	private Set participanteses = new HashSet(0);
-	@SuppressWarnings("rawtypes")
+	
 	private Set seguirs = new HashSet(0);
-	@SuppressWarnings("rawtypes")
-	private Set integranteses = new HashSet(0);
+	
+	private Set<Integrantes> integranteses = new HashSet<Integrantes>(0);
 
 	// Constructors
 
@@ -98,33 +98,27 @@ public class Grupo implements java.io.Serializable {
 		this.contrasena = contrasena;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public Set getParticipanteses() {
 		return this.participanteses;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public void setParticipanteses(Set participanteses) {
 		this.participanteses = participanteses;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public Set getSeguirs() {
 		return this.seguirs;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public void setSeguirs(Set seguirs) {
 		this.seguirs = seguirs;
 	}
-
-	@SuppressWarnings("rawtypes")
-	public Set getIntegranteses() {
+	
+	public Set<Integrantes> getIntegranteses() {
 		return this.integranteses;
 	}
 
-	@SuppressWarnings("rawtypes")
-	public void setIntegranteses(Set integranteses) {
+	public void setIntegranteses(Set<Integrantes> integranteses) {
 		this.integranteses = integranteses;
 	}
 

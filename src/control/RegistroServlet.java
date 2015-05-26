@@ -11,13 +11,14 @@ import bean.MiSesion;
 @RequestMapping("/registro.htm")
 
 public class RegistroServlet {
+	
 	@Autowired
 	private MiSesion misesion;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String showRegistro(){
 		if(misesion.getUsuario()!=null){
-			return "redirect:usuario.htm";
+			return "usuario.htm";
 		}
 		return "registro";
 	}

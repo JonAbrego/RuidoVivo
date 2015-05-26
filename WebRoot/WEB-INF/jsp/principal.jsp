@@ -35,7 +35,7 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form">
+                                <form role="form" method="POST" action="${pageContext.request.contextPath}/principal.htm">
                                     <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>

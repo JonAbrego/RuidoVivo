@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
+                            <li>También estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
@@ -68,15 +68,13 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
-                        <li class="active"><a href="${pageContext.request.contextPath}/acercaDe.htm">Acerca de</a></li>
-                        <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li> 
+                        <li class="active"><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca de</a></li>
+                        <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li>  
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="">Salir</a></li>
+                                <li><a href="${pageContext.request.contextPath}/edit.htm">Configurar Cuenta</a></li>
+                                <li><a href="${pageContext.request.contextPath}/principal.htm">Salir</a></li>
                             </ul>
                         </li>                       
                     </ul>
@@ -90,9 +88,12 @@
         <div class="container">
 			<div class="center wow fadeInDown">
 				<h2>Acerca de Ruido Vivo</h2>
-				<p class="lead">Es un Sitio Web pensada para todos los amantes de la música que disfrutan ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podrás encontrar a varios de los grupos que te gustan incluso si son bandas locales ya que cualquier grupo de cualquier género podrá registrarse.<br/>
+				<p class="lead">Es un Sitio Web pensada para todos los amantes de la música que 
+				disfrutan ir a los eventos que sus grupos o bandas favoritas realizan.
+				<br>En este sitio podrás encontrar a varios de los grupos que te gustan incluso 
+				si son bandas locales ya que cualquier grupo de cualquier género podrá registrarse.<br/>
 				Además te ofrecemos un album-calendario para que tengas un historial de los eventos a los que haz asistido.<br>
-					Así que no esperes más registrate.</p>
+				Así que no esperes más registrate.</p>
 				<p class="lead">It's Freee!!!.</p>
 			</div>
 			
@@ -222,7 +223,9 @@
 									</ul>
 								</div>
 							</div><!--/.media -->
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+							<p>There are many variations of passages of Lorem Ipsum available, but 
+							the majority have suffered alteration in some form, by injected humour, 
+							or randomised words which don't look even slightly believable.</p>
 						</div>
 					</div><!--/.col-lg-4 -->					
 				</div> <!--/.row -->
@@ -257,9 +260,9 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="${pageContext.request.contextPath}/principal.htm">Inicio</a></li>
-                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>                        
-                        <li><a href="${pageContext.request.contextPath}/registro.htm">Registrate</a></li>
+                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
+                        <li><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca de</a></li>                                                
                     </ul>
                 </div>
             </div>
