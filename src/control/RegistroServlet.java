@@ -18,7 +18,7 @@ public class RegistroServlet {
 	@RequestMapping(method=RequestMethod.GET)
 	public String showRegistro(){
 		if(misesion.getUsuario()!=null){
-			return "usuario.htm";
+			return "redirect:login.htm";
 		}
 		return "registro";
 	}

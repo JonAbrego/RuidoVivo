@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Inicio | Datos Usuarios</title>
+    <title>Datos | Usuario</title>
 	
 	<!-- core CSS -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -67,14 +67,14 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Inicio</a></li>
-                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="${pageContext.request.contextPath}/usuario.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca de</a></li>
                         <li><a href="#">Calendario</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="404.html">Configurar Cuenta</a></li>
-                                <li class=""><a href="">Salir</a></li>
+                                <li><a href="${pageContext.request.contextPath}/edit.htm">EditarCuenta</a></li>                                
+                                <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
                             </ul>
                         </li>                       
                     </ul>
@@ -86,8 +86,8 @@
         <div class="container"> 
             <div class="row contact-wrap registro-form">
                 <div class="status alert alert-success" style="display: none"></div>
-                <ul id="myTab" class="nav nav-tabs ul-reg" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Usuario</a></li>                    
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Actualizar</a></li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab">
@@ -106,7 +106,7 @@
                             <div class="form-group">
                                 <label for="usuario" class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="datos" class="form-control" id="usuario" placeholder="Nombre de Usuario" required autofocus>
+                                    <input type="text" name="datos" class="form-control" id="usuario" placeholder="Nombre de Usuario" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -116,14 +116,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="ccontrasena" class="col-sm-2 control-label">Confirmar Contraseña </label>
+                                <label for="contrasena" class="col-sm-2 control-label">Nueva Contraseña </label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="datos" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=6>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ccontrasena" class="col-sm-2 control-label">Confirmar Nueva Contraseña </label>
                                 <div class="col-sm-10">
                                     <input type="password" name="datos" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" required minlength=6>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <input type="submit" class="btn btn-default" name="editUser" value="Actualizar">
+                            	<div class="row">
+                                	<div class="col-md-offset-2 col-md-5">
+                                    	<input type="submit" class="btn btn-primary reg" name="editUser" value="Actualizar">
+                                	</div>
+                                	<div class="col-md-5">
+                                    	<button class="btn btn-primary"><a href="incio">Cancelar</a></button>
+                                	</div>
                                 </div>
                             </div>
                         </form>

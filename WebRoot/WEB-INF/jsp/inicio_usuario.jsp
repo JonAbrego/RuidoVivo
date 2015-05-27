@@ -74,7 +74,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="${pageContext.request.contextPath}/edit.htm">EditarCuenta</a></li>                                
-                                <li><a href="${pageContext.request.contextPath}/principal.htm">Salir</a></li>                                                       
+                                <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
                             </ul>
                         </li>                       
                     </ul>

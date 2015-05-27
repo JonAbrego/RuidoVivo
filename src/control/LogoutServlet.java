@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
 	@RequestMapping(method=RequestMethod.GET)
 	public String showPrincipal(){
 		misesion.setUsuario(null);
-		return "principal.htm";
+		return "redirect:principal.htm";
 	}
 
 }

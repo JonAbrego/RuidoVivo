@@ -19,7 +19,7 @@ public class PrincipalServlet {
 	@RequestMapping(method=RequestMethod.GET)
 	public String showPrincipal(){
 		if(misesion.getUsuario()!=null){
-			return "login.htm";
+			return "redirect:login.htm";
 		}
 		return "principal";
 	}

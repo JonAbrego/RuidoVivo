@@ -34,19 +34,17 @@ public class LoginServlet {
 	public String sesionActiva(){
 		if(usu.login(misesion.getUsuario()).size()>0){
 			return "redirect:usuario.htm";
+		} else if(grp.login(misesion.getUsuario()).size()>0){
+			return "redirect:grupo.htm";
 		}
 		return "redirect:principal.htm"; 
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ModelAndView showLogin(@RequestParam("user") String usuario,@RequestParam("pass") String contrasena){
-		//Verifica si los datos obtenidos no están en algún de los dos campos
-		ModelAndView principal=new ModelAndView("principal");
-		ModelAndView usuarios=new ModelAndView("inicio_usuario");
-		ModelAndView grupos=new ModelAndView("inicio_grupo");
+	public String showLogin(@RequestParam("user") String usuario,@RequestParam("pass") String contrasena){
 		if(usu.login(usuario).size()==0 && grp.login(usuario).size()==0){
 			//Si no existe en algno de los 2 redirecciona a la principal
-			return principal;
+			return "redirect:principal.htm";
 		}else{			
 			//Como vio que si existe, verifica en cual se encuentra, si la lista de usuarios es 
 			// mayor que creo entonces esta intentando acceder un usario normal
@@ -55,29 +53,23 @@ public class LoginServlet {
 				Usuario u= usu.login(usuario).get(0);
 				//Vemos si la contrasena ingresada es igual con la asiganda a ese usuario
 				if(u.getContrasena().equals(contrasena)){
-					usuarios.addObject("nombre", u.getNombre());
 					// Si est igual redireccioamos a la principal de usuario
-					return usuarios;
+					misesion.setUsuario(u.getCorreo());
+					return "redirect:usuario.htm";
 				}else{
 					//Si esta mal hacemos que ingrense de nuevo dicha contrasena 
-					return principal;
+					return "redirect:principal.htm";
 				}
 			}else{
 				//Como existe pero no esta en usuarios normales, accedesmos a las bandas
 				//Al ser un unica banda obtenemso la que esta en la posicion 0
 				Grupo g= grp.login(usuario).get(0);								
 				//Vemos si la contrasena ingresada es igual con la asiganda a la banda 
-				if(g.getContrasena().equals(contrasena)){					
-					grupos.addObject("nombre", g.getNombre());
-					grupos.addObject("informacion",g.getInformacion());
-					grupos.addObject("integrantes",g.getIntegranteses());										
-					//Si es igual redireccionamos a la principal de banda
-					for(Integrantes a : g.getIntegranteses()){
-						System.out.println(a.getNombre());
-					}
-					return grupos;
+				if(g.getContrasena().equals(contrasena)){
+					misesion.setUsuario(g.getNombre());
+					return "redirect:grupo.htm";
 				}else{
-					return principal;
+					return "redirect:principal.htm";
 				}
 			}				
 		}
