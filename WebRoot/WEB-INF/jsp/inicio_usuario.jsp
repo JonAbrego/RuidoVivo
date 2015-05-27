@@ -67,7 +67,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="#"><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
+                        <li class="#"><a href="${pageContext.request.contextPath}/usuario.htm">Inicio</a></li>
                         <li><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca De</a></li>
                         <li><a href="#">Calendario</a></li>                        
                         <li class="dropdown">

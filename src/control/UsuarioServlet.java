@@ -26,7 +26,7 @@ public class UsuarioServlet {
 	private OperacionesUsuario usu = new OperacionesUsuario();
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView showRegistro(){
+	public ModelAndView showUsuario(){
 		ModelAndView principal=new ModelAndView("inicio");
 		if(sesion.getUsuario()==null){
 			return principal;

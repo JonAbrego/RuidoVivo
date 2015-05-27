@@ -57,7 +57,7 @@ public class OperacionesUsuario {
 		Session s = HibernateSessionFactory.getSession();	
 		Transaction txt=null;
 		txt=s.beginTransaction();
-		String hql = "update Usuario set corre = '"+nuevo+"' where correo = '"+correo+"'";
+		String hql = "update Usuario set correo = '"+nuevo+"' where correo = '"+correo+"'";
         Query query = s.createQuery(hql);	       
         int rowCount = query.executeUpdate();
         txt.commit();  

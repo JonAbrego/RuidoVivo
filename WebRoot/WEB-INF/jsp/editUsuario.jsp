@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +91,7 @@
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab">
-                        <form class="form-horizontal" id="registro1" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/edit.htm">
+                        <form class="form-horizontal" id="editar"  method="post" action="${pageContext.request.contextPath}/edit.htm">
 
                             <div class="center">        
                                 <h2>Actualizar Datos</h2>
@@ -100,40 +100,33 @@
                             <div class="form-group">
                                 <label for="usuario" class="col-sm-2 control-label">Correo</label>
                                 <div class="col-sm-10">
-                                    <input type="email" name="datos" class="form-control" id="correo" placeholder="example@example.com" required autofocus>
+                                    <input type="email" value="${ usuario.correo }" name="datos" class="form-control" id="correo" placeholder="example@example.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="usuario" class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="datos" class="form-control" id="usuario" placeholder="Nombre de Usuario" required>
+                                    <input type="text" value="${ usuario.nombre }" name="datos" class="form-control" id="usuario" placeholder="Nombre de Usuario" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="contrasena" class="col-sm-2 control-label">Contraseña </label>
-                                <div class="col-sm-10">
-                                    <input type="password" name="datos" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=6>
-                                </div>
+                            	<div class="checkbox col-sm-offset-2">
+                                	<label for="contrasena">
+                                		<input type="checkbox" name="otro" id="cambiar">
+                                		Cambiar Contraseña
+                                	</label>
+                            	</div>
                             </div>
-                            <div class="form-group">
-                                <label for="contrasena" class="col-sm-2 control-label">Nueva Contraseña </label>
-                                <div class="col-sm-10">
-                                    <input type="password" name="datos" class="form-control" id="contrasena" placeholder="Contraseña" required minlength=6>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="ccontrasena" class="col-sm-2 control-label">Confirmar Nueva Contraseña </label>
-                                <div class="col-sm-10">
-                                    <input type="password" name="datos" class="form-control" id="ccontrasena" placeholder="Confirmar Contraseña" required minlength=6>
-                                </div>
+                            <div id="contrasenas" hidden>
+                            	
                             </div>
                             <div class="form-group">
                             	<div class="row">
-                                	<div class="col-md-offset-2 col-md-5">
-                                    	<input type="submit" class="btn btn-primary reg" name="editUser" value="Actualizar">
+	                                <div class="col-sm-offset-2 col-md-4">
+                                    	<input type="submit" class="btn btn-primary reg" name="editUser" id="editUser" value="Actualizar" disabled>
                                 	</div>
-                                	<div class="col-md-5">
-                                    	<button class="btn btn-primary"><a href="incio">Cancelar</a></button>
+                                	<div class="col-md-4">
+	                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/usuario.htm">Cancelar</a>
                                 	</div>
                                 </div>
                             </div>
@@ -144,7 +137,7 @@
         </div><!--/.container-->
     </section><!--/#contact-page-->
 
- <footer id="footer" class="midnight-blue">
+ 	<footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -166,5 +159,47 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
+    <script>
+    	$("input[name='datos']").change(function(){
+	    	$("#editUser").prop('disabled', false);
+    	});
+    	$("#cambiar").change(function(){
+    		if($("#cambiar").is(":checked")){
+    			$("#contrasenas").append('<div class="form-group">'+
+    				'<label for="ncontrasena" class="col-sm-2 control-label">Contraseña Actual </label>'+
+    				'<div class="col-sm-10">'+
+    					'<input type="password" name="datos" class="form-control" id="ncontrasena" placeholder="Escriba su Contraseña actual" required minlength=6>'+
+                   	'</div>'+
+               	'</div>'+
+                '<div class="form-group">'+
+                	'<label for="cncontrasena" class="col-sm-2 control-label">Nueva Contraseña </label>'+
+                	'<div class="col-sm-10">'+
+                		'<input type="password" name="datos" class="form-control" id="cncontrasena" placeholder="Escriba su nueva Contraseña" required minlength=6>'+
+                	'</div>'+
+                '</div>');
+    			$("#contrasenas").show();
+    			$("input[name='datos']").change(function(){
+	    			$("#editUser").prop('disabled', false);
+    			});
+    		} else {
+    			$("#contrasenas").hide();
+    			$("#contrasenas").empty();
+    		}
+    	});
+    </script>
+    <script>
+    	var form = $("#editar");
+ 		form.submit(
+ 			$.ajax({
+ 				type: form.attr('method'),
+ 				url: form.attr('action'),
+ 				data: $.serialize(datos),
+ 				succes: function(){
+ 					alert("se acrtualizaron tus datos");
+ 				}
+ 			})
+ 		);   	
+    </script>
 </body>
 </html>
+ 
