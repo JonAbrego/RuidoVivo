@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Acerca | Ruido Vivo</title>
+    <title>Ruido Vivo | Acerca </title>
 	
 	<!-- core CSS -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -29,20 +29,20 @@
 
 <body>
 
-    <header id="header">
+       <header id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>También estamos en</li>
+                            <li>Tambien estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form">
+                                <form role="form" method="POST" action="${pageContext.request.contextPath}/busqueda.htm">
                                     <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
@@ -68,13 +68,13 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
-                        <li class="active"><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca de</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
                         <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li>  
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/edit.htm">Configurar Cuenta</a></li>
-                                <li><a href="${pageContext.request.contextPath}/principal.htm">Salir</a></li>
+                                <li><a href="${pageContext.request.contextPath}/editar.htm">EditarCuenta</a></li>                                
+                                <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
                             </ul>
                         </li>                       
                     </ul>
@@ -260,14 +260,15 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
-                        <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
-                        <li><a href="${pageContext.request.contextPath}/acercaUsuario.htm">Acerca de</a></li>                                                
+                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>                        
+                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                
                     </ul>
                 </div>
             </div>
         </div>
     </footer><!--/#footer-->
+   
    
     <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
@@ -275,23 +276,19 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
-    <script>
+    <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
+   <script>
         $(function() {
                 function displayResult(item) {
                     $('.alert').show().html('You selected <strong>' + item.value + '</strong>: <strong>' + item.text + '</strong>');
                 }
                 $('#autocomplete').typeahead({
                     source: [
-                        {ID: 1, Name: 'Toronto'},
-                        {ID: 2, Name: 'Montreal'},
-                        {ID: 3, Name: 'New York'},
-                        {ID: 4, Name: 'Buffalo'},
-                        {ID: 5, Name: 'Boston'},
-                        {ID: 6, Name: 'Columbus'},
-                        {ID: 7, Name: 'Dallas'},
-                        {ID: 8, Name: 'Vancouver'},
-                        {ID: 9, Name: 'Seattle'},
-                        {ID: 10, Name: 'Los Angeles'}
+                        {ID: 1, Name: 'Bukis 2.0'},
+                        {ID: 2, Name: 'El Haragán y Compañía'},
+                        {ID: 3, Name: 'Jarabedepalo'},
+                        {ID: 4, Name: 'Inspector'},
+                        {ID: 4, Name: 'Panteón Rococó'},                      
                     ],
                     displayField: 'Name',
                     valueField: 'ID',
@@ -299,5 +296,6 @@
                 });
             });
     </script>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 package control;
 
+import hibernate.Asistir;
 import hibernate.Evento;
 import hibernate.Grupo;
 import hibernate.Integrantes;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/login.htm")
@@ -25,7 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginServlet {
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
-	private OperacionesBanda grp= new OperacionesBanda();
+	private OperacionesBanda grp= new OperacionesBanda();	
 	
 	@Autowired
 	private MiSesion misesion;
@@ -39,11 +39,11 @@ public class LoginServlet {
 		}
 		return "redirect:principal.htm"; 
 	}
-	
+		
 	@RequestMapping(method=RequestMethod.POST)
 	public String showLogin(@RequestParam("user") String usuario,@RequestParam("pass") String contrasena){
 		if(usu.login(usuario).size()==0 && grp.login(usuario).size()==0){
-			//Si no existe en algno de los 2 redirecciona a la principal
+			//Si no existe en alguno de los 2 redirecciona a la principal
 			return "redirect:principal.htm";
 		}else{			
 			//Como vio que si existe, verifica en cual se encuentra, si la lista de usuarios es 
@@ -53,7 +53,7 @@ public class LoginServlet {
 				Usuario u= usu.login(usuario).get(0);
 				//Vemos si la contrasena ingresada es igual con la asiganda a ese usuario
 				if(u.getContrasena().equals(contrasena)){
-					// Si est igual redireccioamos a la principal de usuario
+					// Si es igual redireccioamos a la principal de usuario
 					misesion.setUsuario(u.getCorreo());
 					return "redirect:usuario.htm";
 				}else{
@@ -76,31 +76,43 @@ public class LoginServlet {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, params={"addUser"})
-	public ModelAndView goodUser(@RequestParam("datos") String[] correo){
-		ModelAndView modelandview = new ModelAndView("inicio_usuario");
-		ModelAndView modelandview2 = new ModelAndView("registro");
+	public String goodUser(@RequestParam("datos") String[] correo){		
 		if(usu.login(correo[0]).size() == 0){
 			Usuario u = new Usuario(correo[0],correo[1],correo[2]);			
-			usu.registro(u);			
-			modelandview.addObject("nombre", u.getNombre());
-			return modelandview;
+			usu.registro(u);
+			misesion.setUsuario(u.getCorreo());
+			return "redirect:usuario.htm";			
 		}else{
-			return modelandview2;
+			return "redirect:registro.htm";
 		}		
 	}
 	
+
+	@RequestMapping(method=RequestMethod.POST, params={"integrante"})
+	public String integranteNuevo(@RequestParam("integra") String integrante){		
+			grp.Integrante(new Integrantes(grp.login(misesion.getUsuario()).get(0),integrante));
+			return "redirect:grupo.htm";	
+	}
+	
+	@RequestMapping(method=RequestMethod.POST, params={"historia"})
+	public String asistir(@RequestParam("asistir") String asistir){
+		try{
+			usu.asistir(new Asistir(usu.evento(asistir).get(0),usu.login(misesion.getUsuario()).get(0)));
+			return "redirect:usuario.htm";
+		}catch(Exception e){
+			return "redirect:usuario.htm";
+		}
+	}
+	
 	@RequestMapping(method=RequestMethod.POST, params={"addGroup"})
-	public ModelAndView goodGroup(@RequestParam("dateG") String[] nombre){
-		ModelAndView modelandview = new ModelAndView("inicio_grupo");
-		ModelAndView modelandview2 = new ModelAndView("registro");
+	public String goodGroup(@RequestParam("dateG") String[] nombre){		
 		if(grp.login(nombre[0]).size() == 0){
 			Grupo g = new Grupo(nombre[0],nombre[1],nombre[2],nombre[3]);
 			grp.registro(g);
-			modelandview.addObject("nombre", g.getNombre());			
-			modelandview.addObject("nombre", g.getInformacion());
-			return modelandview;
+			misesion.setUsuario(g.getNombre());
+			return "redirect:grupo.htm";		
 		}else{
-			return modelandview2;
+			return "redirect:registro.htm";
 		}		
 	}
 	
@@ -114,6 +126,5 @@ public class LoginServlet {
 			e.printStackTrace();
 			return "inicio_grupo";
 		}		
-	}
-	
+	}	
 }

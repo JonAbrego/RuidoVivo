@@ -1,48 +1,48 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Acerca | Ruido Vivo</title>
-	
-	<!-- core CSS -->
-    <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/animate.min.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/responsive.css" rel="stylesheet">
-	
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+	<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+    	<title>Ruido Vivo | Calendario</title>
+        <!-- core CSS -->
+    	<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/resources/css/animate.min.css" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
+    	<link href="${pageContext.request.contextPath}/resources/css/responsive.css" rel="stylesheet">
+    
+    	<!--[if lt IE 9]>
+    	<script src="js/html5shiv.js"></script>
+    	<script src="js/respond.min.js"></script>
+    	<![endif]-->       
+    	<link rel="shortcut icon" href="images/ico/favicon.ico">
+    	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	</head><!--/head-->  
+  	<body>
 
-<body>
-
-    <header id="header">
+      <header id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>TambiÈn estamos en</li>
+                            <li>Tambien estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                             	<form role="form" method="POST" action="${pageContext.request.contextPath}/principal.htm">
+                                <form role="form" method="POST" action="${pageContext.request.contextPath}/busqueda.htm">
                                     <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
@@ -52,7 +52,7 @@
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
+        
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -77,7 +77,7 @@
                             <input type="text" name="user" class="form-control" placeholder="Correo" required>
                         </div>
                         <div class="form-group login">
-                            <input type="password" name="pass" class="form-control" placeholder="ContraseÒa" required>
+                            <input type="password" name="pass" class="form-control" placeholder="Contrase√±a" required>
                         </div>
                         <button type="submit" class="btn btn-default btn-login" name="login">Ingresar</button>
                     </form>
@@ -91,12 +91,12 @@
         <div class="container">
 			<div class="center wow fadeInDown">
 				<h2>Acerca de Ruido Vivo</h2>
-				<p class="lead">Es un Sitio Web pensada para todos los amantes de la m˙sica que disfrutan 
-				ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podr·s encontrar 
+				<p class="lead">Es un Sitio Web pensada para todos los amantes de la m√∫sica que disfrutan 
+				ir a los eventos que sus grupos o bandas favoritas realizan.<br>En este sitio podr√°s encontrar 
 				a varios de los grupos que te gustan incluso si son bandas locales ya que cualquier grupo de 
-				cualquier gÈnero podr· registrarse.<br/>
-				Adem·s te ofrecemos un album-calendario para que tengas un historial de los eventos a los que haz asistido.<br>
-				AsÌ que no esperes m·s registrate.</p>
+				cualquier g√©nero podr√° registrarse.<br/>
+				Adem√°s te ofrecemos un album-calendario para que tengas un historial de los eventos a los que haz asistido.<br>
+				As√≠ que no esperes m√°s registrate.</p>
 				<p class="lead"><strong>It's Freee!!!.</strong></p>
 			</div>
 			
@@ -268,12 +268,13 @@
         </div>
     </footer><!--/#footer-->
    
-    <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+       <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
     <script>
         $(function() {
                 function displayResult(item) {
@@ -281,16 +282,11 @@
                 }
                 $('#autocomplete').typeahead({
                     source: [
-                        {ID: 1, Name: 'Toronto'},
-                        {ID: 2, Name: 'Montreal'},
-                        {ID: 3, Name: 'New York'},
-                        {ID: 4, Name: 'Buffalo'},
-                        {ID: 5, Name: 'Boston'},
-                        {ID: 6, Name: 'Columbus'},
-                        {ID: 7, Name: 'Dallas'},
-                        {ID: 8, Name: 'Vancouver'},
-                        {ID: 9, Name: 'Seattle'},
-                        {ID: 10, Name: 'Los Angeles'}
+                        {ID: 1, Name: 'Bukis 2.0'},
+                        {ID: 2, Name: 'El Harag√°n y Compa√±√≠a'},
+                        {ID: 3, Name: 'Jarabedepalo'},
+                        {ID: 4, Name: 'Inspector'},
+                        {ID: 4, Name: 'Pante√≥n Rococ√≥'},                      
                     ],
                     displayField: 'Name',
                     valueField: 'ID',

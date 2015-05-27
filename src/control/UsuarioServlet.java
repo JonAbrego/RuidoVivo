@@ -1,9 +1,6 @@
 package control;
 
-import hibernate.Grupo;
-import hibernate.Integrantes;
 import hibernate.Usuario;
-import operaciones.OperacionesBanda;
 import operaciones.OperacionesUsuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,17 +21,20 @@ public class UsuarioServlet {
 	private MiSesion sesion;
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
+	private ModelAndView model=new ModelAndView("inicio");
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView showUsuario(){
-		ModelAndView principal=new ModelAndView("inicio");
+	public ModelAndView showRegistro(){
+		
 		if(sesion.getUsuario()==null){
-			return principal;
+			model.setViewName("inicio");
+			return model;
 		}
-		ModelAndView usuarios=new ModelAndView("inicio_usuario");
+		model.setViewName("inicio_usuario");
 		Usuario u= usu.login(sesion.getUsuario()).get(0);
-		usuarios.addObject("nombre", u.getNombre());
-		return usuarios;
+		model.addObject("nombre", u.getNombre());
+		model.addObject("asistencias", u.getAsistirs());
+		return model;
 	}
 	
 }

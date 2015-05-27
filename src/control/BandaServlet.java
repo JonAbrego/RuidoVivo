@@ -1,15 +1,8 @@
 package control;
 
 import hibernate.Grupo;
-import hibernate.Integrantes;
-
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 import operaciones.OperacionesBanda;
 
@@ -31,19 +24,19 @@ public class BandaServlet extends HttpServlet {
 	private MiSesion sesion;
 	
 	private OperacionesBanda grp= new OperacionesBanda();
+	private ModelAndView model=new ModelAndView();
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView verifica(){
-		ModelAndView principal=new ModelAndView("inicio");
+	public ModelAndView verifica(){		
 		if(sesion.getUsuario()==null){
-			return principal;
-		}
-		ModelAndView grupos=new ModelAndView("inicio_grupo");
-		Grupo g= grp.login(sesion.getUsuario()).get(0);								
-		grupos.addObject("nombre", g.getNombre());
-		grupos.addObject("informacion",g.getInformacion());
-		grupos.addObject("integrantes",g.getIntegranteses());
-		return grupos;
+			model.setViewName("principal");
+			return model;
+		}			
+			Grupo g= grp.login(sesion.getUsuario()).get(0);								
+			model.addObject("nombre", g.getNombre());
+			model.addObject("informacion",g.getInformacion());
+			model.addObject("integrantes",g.getIntegranteses());
+			model.setViewName("inicio_grupo");
+			return model;
 	}
-
 }

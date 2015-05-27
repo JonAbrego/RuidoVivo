@@ -12,9 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.MiSesion;
 
 @Controller
-@RequestMapping("/acerca.htm")
+@RequestMapping("/calendario.htm")
 
-public class AcercaUsuarioServlet {
+public class CalendarioUsuario {
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
 	private OperacionesBanda grp= new OperacionesBanda();
@@ -26,13 +26,13 @@ public class AcercaUsuarioServlet {
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView sesionActiva(){
 		if(usu.login(misesion.getUsuario()).size()>0){
-			model.setViewName("acercaDe");
+			model.setViewName("calendarioDe");
 			return model;
 		} else if(grp.login(misesion.getUsuario()).size()>0){
-			model.setViewName("acercaDe");
+			model.setViewName("calendarioDe");
 			return model;
 		}
-		model.setViewName("acerca");
+		model.setViewName("calendario");
 		return model; 
 	}
 }

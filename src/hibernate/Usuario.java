@@ -16,8 +16,8 @@ public class Usuario implements java.io.Serializable {
 	private String correo;
 	private String nombre;
 	private String contrasena;
-	@SuppressWarnings("rawtypes")
-	private Set asistirs = new HashSet(0);
+	
+	private Set<Asistir> asistirs = new HashSet<Asistir>(0);
 	@SuppressWarnings("rawtypes")
 	private Set seguirs = new HashSet(0);
 
@@ -41,7 +41,7 @@ public class Usuario implements java.io.Serializable {
 	/** full constructor */
 	@SuppressWarnings("rawtypes")
 	public Usuario(String correo, String nombre, String contrasena,
-			Set asistirs, Set seguirs) {
+			Set<Asistir> asistirs, Set seguirs) {
 		this.correo = correo;
 		this.nombre = nombre;
 		this.contrasena = contrasena;
@@ -88,8 +88,8 @@ public class Usuario implements java.io.Serializable {
 		return this.asistirs;
 	}
 
-	@SuppressWarnings("rawtypes")
-	public void setAsistirs(Set asistirs) {
+	
+	public void setAsistirs(Set<Asistir> asistirs) {
 		this.asistirs = asistirs;
 	}
 

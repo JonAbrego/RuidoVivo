@@ -23,10 +23,5 @@ public class PrincipalServlet {
 		}
 		return "principal";
 	}
-		
-	@RequestMapping(method=RequestMethod.POST, params={"banda"})
-	public String showBanda(){
-		return "grupo";
-	}
 
 }

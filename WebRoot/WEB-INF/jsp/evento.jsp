@@ -29,21 +29,21 @@
 
 <body>
 
-    <header id="header">
+        <header id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>También estamos en</li>
+                            <li>Tambien estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <div class="search">
-                                <form role="form" onsubmit="return displayResult(this)">
-                                    <input id="autocomplete" type="search" class="search-form" name="busqueda" placeholder="Busca un grupo">
+                                <form role="form" method="POST" action="${pageContext.request.contextPath}/busqueda.htm">
+                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
                            </div>
@@ -256,16 +256,11 @@
                 }
                 $('#autocomplete').typeahead({
                     source: [
-                        {ID: 1, Name: 'Toronto'},
-                        {ID: 2, Name: 'Montreal'},
-                        {ID: 3, Name: 'New York'},
-                        {ID: 4, Name: 'Buffalo'},
-                        {ID: 5, Name: 'Boston'},
-                        {ID: 6, Name: 'Columbus'},
-                        {ID: 7, Name: 'Dallas'},
-                        {ID: 8, Name: 'Vancouver'},
-                        {ID: 9, Name: 'Seattle'},
-                        {ID: 10, Name: 'Los Angeles'}
+                        {ID: 1, Name: 'Bukis 2.0'},
+                        {ID: 2, Name: 'El Haragán y Compañía'},
+                        {ID: 3, Name: 'Jarabedepalo'},
+                        {ID: 4, Name: 'Inspector'},
+                        {ID: 4, Name: 'Panteón Rococó'},                      
                     ],
                     displayField: 'Name',
                     valueField: 'ID',

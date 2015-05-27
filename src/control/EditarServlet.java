@@ -12,27 +12,25 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.MiSesion;
 
 @Controller
-@RequestMapping("/acerca.htm")
+@RequestMapping("/editar.htm")
 
-public class AcercaUsuarioServlet {
+public class EditarServlet {
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
-	private OperacionesBanda grp= new OperacionesBanda();
-	private ModelAndView model = new ModelAndView();
+	private OperacionesBanda grp= new OperacionesBanda();	
 	
 	@Autowired
 	private MiSesion misesion;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView sesionActiva(){
-		if(usu.login(misesion.getUsuario()).size()>0){
-			model.setViewName("acercaDe");
-			return model;
-		} else if(grp.login(misesion.getUsuario()).size()>0){
-			model.setViewName("acercaDe");
-			return model;
-		}
-		model.setViewName("acerca");
-		return model; 
+	public String sesionActiva(){
+		if(usu.login(misesion.getUsuario()).size()>0){			
+			return "redirect:edit.htm";
+		} else if(grp.login(misesion.getUsuario()).size()>0){			
+			return "redirect:editarBanda.htm";
+		}		
+		return "redirect:principal.htm"; 
 	}
+	
+
 }

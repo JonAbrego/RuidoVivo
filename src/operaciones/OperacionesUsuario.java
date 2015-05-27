@@ -20,6 +20,12 @@ public class OperacionesUsuario {
 		return usuario.findByProperty("correo", recibido);
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Evento> evento(String recibido){
+		EventoDAO evento=new EventoDAO();
+		return evento.findByProperty("nombre", recibido);
+	}
+	
 	/*guardar nuevo usuario en la base*/
 	public void registro(Usuario usuario){
 		session=HibernateSessionFactory.getSession();
@@ -63,5 +69,12 @@ public class OperacionesUsuario {
         txt.commit();  
         System.out.println("Rows affected: " + rowCount);		             
 	}
-					
+
+
+	public void asistir(Asistir asistir){
+		session=HibernateSessionFactory.getSession();
+		tx=session.beginTransaction();
+		session.save(asistir);
+		tx.commit();
+	}
 }

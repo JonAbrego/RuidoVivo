@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Ruido Vivo | Grupo</title>
+    <title>Ruido Vivo | Calendario </title>
 	
 	<!-- core CSS -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -58,80 +56,98 @@
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
+                
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="${pageContext.request.contextPath}/busqueda.htm"><img src="images/logo.png" alt="logo"> Ruido Vivo</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/login.htm"><img src="images/logo.png" alt="logo"> Ruido Vivo</a>
                 </div>
-                
+				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="${pageContext.request.contextPath}/principal.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
                         <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
-                        <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li>
-                        <li><a href="${pageContext.request.contextPath}/registro.htm">Registro</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/calendarioUsuario.htm">Calendario</a></li>  
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="${pageContext.request.contextPath}/editar.htm">EditarCuenta</a></li>                                
+                                <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
+                            </ul>
+                        </li>                       
                     </ul>
-                    <form class="navbar-form navbar-right" role="form" id="login" action="${pageContext.request.contextPath}/login.htm" method="post">
-                        <div class="form-group login">
-                            <input type="text" name="user" class="form-control" placeholder="Correo" required>
-                        </div>
-                        <div class="form-group login">
-                            <input type="password" name="pass" class="form-control" placeholder="Contraseña" required>
-                        </div>
-                        <button type="submit" class="btn btn-default btn-login" name="login">Ingresar</button>
-                    </form>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
         
     </header><!--/header-->
-
-
     <section id="blog" class="container">
-        <div class="blog" style="margin-top:-10px">
+        <div class="center">
+            <h2>Eventos</h2>
+            <p class="lead">Aquí puedes ver nuestros eventos</p>
+        </div>
+
+        <div class="blog">
             <div class="row">
-                 <div class="col-md-10">
+                 <div class="col-md-9">
+                    
                     <div class="blog-item">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="text-center">
-                                    <img src="images/logo.png" style="height:150px">
-                                    <p style="font-family:'Lato',sans-serif;font-size:16px;"> </p>
-                                    	<table style="font-family:'Lato',sans-serif;font-size:16px;"> 
-                                    		<tr>	
-                                    			<td>Integrantes</td>
-                                    		</tr>	
-                                    		<c:forEach items="${integrantes}" var="integrantes">
-                                    		<tr>
-                                    			<td>
-                                    				${integrantes.nombre}
-                                    			</td>
-                                            </tr>
-											</c:forEach>
-                                     </table>
+                             <div class="col-sm-2 text-center">
+                                <div class="entry-meta"> 
+                                    <span id="publish_date">01  MAR 2015</span>
+                                    <span><i class="fa fa-user"></i> <a href="#">Panteón Rocóco</a></span>
+                                    <span><i class="fa fa-user"></i> <a href="#">La Tremenda Korte</a></span>
+                                    <span><i class="fa fa-user"></i> <a href="#">Otro más</a></span>
+                                    <span><i class="fa fa-user"></i><a href="#">56 Likes</a></span>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="text-center">
-                                    <p style="font-family:'Lato', sans-serif;color:black;font-size:28px;margin-top:70px">
-                                    	${nombre}</p>
-                                </div>
+                            <div class="col-sm-10 blog-content">
+                                <a href=""><img class="img-responsive img-blog" src="images/festival.jpg" width="100%" alt="" /></a>
+                                <h2><a href="blog-item.html">"20 años de de SKA en México"</a></h2>
+                                <h3>Con motivo a los 20 años de aparición del 
+                                SKA en México ofreceremos un concierto totalmente 
+                                llendo de ambiente 
+                                para todos los amantes del SKA.</h3>
+                                <a class="btn btn-primary readmore" href="#">Read More <i class="fa fa-angle-right"></i></a>
                             </div>
-                            <div class="col-md-8" style="text-align:justify;margin-top:40px;min-height:200px;font-family:'Lato', sans-serif;font-size:18px">
-                                <p>${informacion }</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                        </div>
+                        </div>    
                     </div><!--/.blog-item-->
+                                                                  
+                    <ul class="pagination pagination-lg">
+                        <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
+                    </ul><!--/.pagination-->
                 </div><!--/.col-md-8-->
-               
+
+                <aside class="col-md-3">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+    				
+    				<div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-11">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Mar 2015 <span class="pull-right">(1)</span></a></li>                                    
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+    				
+    				
+    			</aside>  
             </div><!--/.row-->
         </div>
     </section><!--/#blog-->
+
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -140,23 +156,22 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="${pageContext.request.contextPath}/principal.htm">Inicio</a></li>
-                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
-						<li><a href="${pageContext.request.contextPath}/registro.htm">Registrate</a></li>
+                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>                        
+                        <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer><!--/#footer-->
 
- 	 	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
-  
      <script>
         $(function() {
                 function displayResult(item) {
@@ -176,5 +191,6 @@
                 });
             });
     </script>
-</body>
+	</body>
 </html>
+    

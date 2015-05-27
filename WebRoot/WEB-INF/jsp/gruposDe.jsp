@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Ruido Vivo | Principal </title>
+    <title>Ruido Vivo | Acerca </title>
 	
 	<!-- core CSS -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +53,7 @@
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
-        
+
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -64,12 +65,12 @@
                     </button>
                     <a class="navbar-brand" href="${pageContext.request.contextPath}/login.htm"><img src="images/logo.png" alt="logo"> Ruido Vivo</a>
                 </div>
-                
+				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
-                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca De</a></li>
-                        <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li>                        
+                        <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
+                        <li><a href="${pageContext.request.contextPath}/calendario.htm">Calendario</a></li>  
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -83,62 +84,52 @@
         </nav><!--/nav-->
         
     </header><!--/header-->
-            <section id="contact-page">
-        <div class="container"> 
-            <div class="row contact-wrap registro-form">
-                <div class="status alert alert-success" style="display: none"></div>
-                <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Actualizar</a></li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab">
-                        <form class="form-horizontal" id="editar"  method="post" action="${pageContext.request.contextPath}/edit.htm">
+    
 
-                            <div class="center">        
-                                <h2>Actualizar Datos</h2>
-                            </div>
-            
-                            <div class="form-group">
-                                <label for="usuario" class="col-sm-2 control-label">Correo</label>
-                                <div class="col-sm-10">
-                                    <input type="email" value="${ usuario.correo }" name="datos" class="form-control" id="correo" placeholder="example@example.com" required>
+
+    <section id="blog" class="container">
+        <div class="blog" style="margin-top:-10px">
+            <div class="row">
+                 <div class="col-md-10">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <img src="images/logo.png" style="height:150px">
+                                    <p style="font-family:'Lato',sans-serif;font-size:16px;"> </p>
+                                    <table style="font-family:'Lato',sans-serif;font-size:16px;"> 
+                                    		<tr>	
+                                    			<td>Integrantes</td>
+                                    		</tr>	
+                                    		<c:forEach items="${integrantes}" var="integrantes">
+                                    		<tr>
+                                    			<td>
+                                    				${integrantes.nombre}
+                                    			</td>
+                                            </tr>
+											</c:forEach>
+									</table>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="usuario" class="col-sm-2 control-label">Nombre</label>
-                                <div class="col-sm-10">
-                                    <input type="text" value="${ usuario.nombre }" name="datos" class="form-control" id="usuario" placeholder="Nombre de Usuario" required>
+                            <div class="col-md-8">
+                                <div class="text-center">
+                                    <p style="font-family:'Lato', sans-serif;color:black;font-size:28px;margin-top:70px">
+                                    ${nombre }</p>
                                 </div>
                             </div>
-                            <div class="form-group">
-                            	<div class="checkbox col-sm-offset-2">
-                                	<label for="contrasena">
-                                		<input type="checkbox" name="otro" id="cambiar">
-                                		Cambiar Contraseña
-                                	</label>
-                            	</div>
+                            <div class="col-md-8" style="text-align:justify;margin-top:40px;min-height:200px;font-family:'Lato', sans-serif;font-size:18px">
+                                <p>${informacion }</p>
                             </div>
-                            <div id="contrasenas" hidden>
-                            	
-                            </div>
-                            <div class="form-group">
-                            	<div class="row">
-	                                <div class="col-sm-offset-2 col-md-4">
-                                    	<input type="submit" class="btn btn-primary reg" name="editUser" id="editUser" value="Actualizar" disabled>
-                                	</div>
-                                	<div class="col-md-4">
-	                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/usuario.htm">Cancelar</a>
-                                	</div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>                                        
-                </div>
+                        </div>
+                        <div class="row">
+                        </div>
+                    </div><!--/.blog-item-->
+                </div><!--/.col-md-8-->
+                 
             </div><!--/.row-->
-        </div><!--/.container-->
-    </section><!--/#contact-page-->
-
- 	  <footer id="footer" class="midnight-blue">
+        </div>
+    </section><!--/#blog-->
+    <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -146,23 +137,23 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                      <li><a href="${pageContext.request.contextPath}/login.htm">Inicio</a></li>
-                      <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>                        
-                      <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
+                        <li><a href="${pageContext.request.contextPath}/principal.htm">Inicio</a></li>
+                        <li><a href="${pageContext.request.contextPath}/acerca.htm">Acerca de</a></li>
+						<li><a href="${pageContext.request.contextPath}/registro.htm">Registrate</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer><!--/#footer-->
 
-    
-  	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+ 	 	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/Typeahead.js"></script>
+  
      <script>
         $(function() {
                 function displayResult(item) {
@@ -181,47 +172,6 @@
                     onSelect: displayResult
                 });
             });
-    </script>
-    <script>
-    	$("input[name='datos']").change(function(){
-	    	$("#editUser").prop('disabled', false);
-    	});
-    	$("#cambiar").change(function(){
-    		if($("#cambiar").is(":checked")){
-    			$("#contrasenas").append('<div class="form-group">'+
-    				'<label for="ncontrasena" class="col-sm-2 control-label">Contraseña Actual </label>'+
-    				'<div class="col-sm-10">'+
-    					'<input type="password" name="datos" class="form-control" id="ncontrasena" placeholder="Escriba su Contraseña actual" required minlength=6>'+
-                   	'</div>'+
-               	'</div>'+
-                '<div class="form-group">'+
-                	'<label for="cncontrasena" class="col-sm-2 control-label">Nueva Contraseña </label>'+
-                	'<div class="col-sm-10">'+
-                		'<input type="password" name="datos" class="form-control" id="cncontrasena" placeholder="Escriba su nueva Contraseña" required minlength=6>'+
-                	'</div>'+
-                '</div>');
-    			$("#contrasenas").show();
-    			$("input[name='datos']").change(function(){
-	    			$("#editUser").prop('disabled', false);
-    			});
-    		} else {
-    			$("#contrasenas").hide();
-    			$("#contrasenas").empty();
-    		}
-    	});
-    </script>
-    <script>
-    	var form = $("#editar");
- 		form.submit(
- 			$.ajax({
- 				type: form.attr('method'),
- 				url: form.attr('action'),
- 				data: $.serialize(datos),
- 				succes: function(){
- 					alert("se acrtualizaron tus datos");
- 				}
- 			})
- 		);   	
     </script>
 </body>
 </html>

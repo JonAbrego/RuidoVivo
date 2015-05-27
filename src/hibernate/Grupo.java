@@ -18,9 +18,9 @@ public class Grupo implements java.io.Serializable {
 	private String logo;
 	private String contrasena;
 	
-	private Set participanteses = new HashSet(0);
+	private Set<Participantes> participanteses = new HashSet<Participantes>(0);
 	
-	private Set seguirs = new HashSet(0);
+	private Set<Seguir> seguirs = new HashSet<Seguir>(0);
 	
 	private Set<Integrantes> integranteses = new HashSet<Integrantes>(0);
 
@@ -43,10 +43,9 @@ public class Grupo implements java.io.Serializable {
 	}
 	
 	/** full constructor */
-	@SuppressWarnings("rawtypes")
 	public Grupo(String nombre, String informacion, String logo,
-			String contrasena, Set participanteses, Set seguirs,
-			Set integranteses) {
+			String contrasena, Set<Participantes> participanteses, Set<Seguir> seguirs,
+			Set<Integrantes> integranteses) {
 		this.nombre = nombre;
 		this.informacion = informacion;
 		this.logo = logo;
@@ -98,19 +97,19 @@ public class Grupo implements java.io.Serializable {
 		this.contrasena = contrasena;
 	}
 
-	public Set getParticipanteses() {
+	public Set<Participantes> getParticipanteses() {
 		return this.participanteses;
 	}
 
-	public void setParticipanteses(Set participanteses) {
+	public void setParticipanteses(Set<Participantes> participanteses) {
 		this.participanteses = participanteses;
 	}
 
-	public Set getSeguirs() {
+	public Set<Seguir> getSeguirs() {
 		return this.seguirs;
 	}
 
-	public void setSeguirs(Set seguirs) {
+	public void setSeguirs(Set<Seguir> seguirs) {
 		this.seguirs = seguirs;
 	}
 	
@@ -121,5 +120,4 @@ public class Grupo implements java.io.Serializable {
 	public void setIntegranteses(Set<Integrantes> integranteses) {
 		this.integranteses = integranteses;
 	}
-
 }
