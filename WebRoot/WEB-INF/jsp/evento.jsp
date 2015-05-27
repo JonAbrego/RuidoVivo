@@ -108,91 +108,15 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-10 blog-content">
-                                    <h2>Consequat bibendum quam</h2>
-                                    <p>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</p>
-
-                                    <p>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper.</p>
-
-                                    <div class="post-tags">
-                                        <strong>Tag:</strong> <a href="#">Cool</a> / <a href="#">Creative</a> / <a href="#">Dubttstep</a>
-                                    </div>
+                                    <h2>Festival 20 años de SKA</h2>
+                                    <p>Precio: 250</p>
+                                    <p>Lugar: Palacio de los deportes</p>
 
                                 </div>
                             </div>
                         </div><!--/.blog-item-->
-                                                                        
-                        <h1 id="comments_title">5 Comments</h1>
-                        <div class="media comment_section">
-                            <div class="pull-left post_comments">
-                                <a href="#"><img src="images/blog/girl.png" class="img-circle" alt="" /></a>
-                            </div>
-                            <div class="media-body post_reply_comments">
-                                <h3>Marsh</h3>
-                                <h4>NOVEMBER 9, 2013 AT 9:15 PM</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-                                <a href="#">Reply</a>
-                            </div>
-                        </div> 
-                        <div class="media comment_section">
-                            <div class="pull-left post_comments">
-                                <a href="#"><img src="images/blog/boy2.png" class="img-circle" alt="" /></a>
-                            </div>
-                            <div class="media-body post_reply_comments">
-                                <h3>Marsh</h3>
-                                <h4>NOVEMBER 9, 2013 AT 9:15 PM</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-                                <a href="#">Reply</a>
-                            </div>
-                        </div> 
-                        <div class="media comment_section">
-                            <div class="pull-left post_comments">
-                                <a href="#"><img src="images/blog/boy3.png" class="img-circle" alt="" /></a>
-                            </div>
-                            <div class="media-body post_reply_comments">
-                                <h3>Marsh</h3>
-                                <h4>NOVEMBER 9, 2013 AT 9:15 PM</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-                                <a href="#">Reply</a>
-                            </div>
-                        </div> 
-
-
-                        <div id="contact-page clearfix">
-                            <div class="status alert alert-success" style="display: none"></div>
-                            <div class="message_heading">
-                                <h4>Leave a Replay</h4>
-                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
-                            </div> 
-      
-                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="form-group">
-                                            <label>Name *</label>
-                                            <input type="text" class="form-control" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email *</label>
-                                            <input type="email" class="form-control" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>URL</label>
-                                            <input type="url" class="form-control">
-                                        </div>                    
-                                    </div>
-                                    <div class="col-sm-7">                        
-                                        <div class="form-group">
-                                            <label>Message *</label>
-                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
-                                        </div>                        
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg" >Submit Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>     
-                        </div><!--/#contact-page-->
-                    </div><!--/.col-md-8-->
+                                                                                                                                                                   
+                        
 
                 <aside class="col-md-3">
                     
@@ -211,10 +135,10 @@
                     <div class="widget tags">
                         <h3>Tag Cloud</h3>
                         <ul class="tag-cloud">
-                            <li><a class="btn btn-xs btn-primary" href="#">México</a></li>
-                            <li><a class="btn btn-xs btn-primary" href="#">Panteon</a></li>
-                            <li><a class="btn btn-xs btn-primary" href="#">Concierto</a></li>
-                            <li><a class="btn btn-xs btn-primary" href="#">SKA</a></li>                
+                            <li class="btn btn-xs btn-primary">México</li>
+                            <li class="btn btn-xs btn-primary">Panteon</li>
+                            <li class="btn btn-xs btn-primary">Concierto</li>
+                            <li class="btn btn-xs btn-primary">SKA</li>                
                         </ul>
                     </div><!--/.tags-->                                                          
                 </aside>     
