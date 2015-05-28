@@ -110,7 +110,7 @@
                                                 <div class="container col-md-10">
                                                 	<div class="row">
                                                 		<div class="col-md-2">
-                                                			<img src="images/logo.png" style="height:150px">
+                                                			${logo}
                                                 		</div>
                                                 		<div class="col-md-offset-2 col-md-4">
 	                                                		<div class="text-center">
@@ -176,7 +176,7 @@
                                      <div class="tab-pane" id="tab3">
                                         <div class="media">
                                             <div class="media-body">
-                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="registro1" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm">
+                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="creaEvento" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm" enctype="multipart/form-data">
 
                                             	  	<div class="center">        
                                             	   		<h2>Crear Evento</h2>
@@ -218,7 +218,7 @@
                                             	  	</div>
                                             	  	<div class="form-group">
                                             	    	<div class="col-sm-offset-3 col-sm-10">
-                                            	      		<input type="submit" class="btn btn-primary reg" name="addEvento" value="Registrarme">
+                                            	      		<input type="submit" class="btn btn-primary reg" name="addEvento" value="Crear Evento">
                                             	    	</div>
                                             	  	</div>
                                             	</form>

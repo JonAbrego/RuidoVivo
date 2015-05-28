@@ -2571,3 +2571,6 @@ shortcodes page css
 .reg {
 	background-color: rgb(110,110,255);
 }
+.reg:hover{
+  background-color: rgb(110,250,125);
+};

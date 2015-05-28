@@ -17,19 +17,19 @@ import bean.MiSesion;
 public class EditarBandaServlet {
 	
 	@Autowired
-	private MiSesion sesion;
+	private MiSesion misesion;
 		
 	private OperacionesBanda banda= new OperacionesBanda(); 
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView showDatosUsuario(){
 		ModelAndView principal=new ModelAndView();
-		if(sesion.getUsuario()==null){
+		if(misesion.getUsuario()==null){
 			principal.setViewName("inicio");
 			return principal;
 		}
 		principal.setViewName("editBanda");
-		Grupo u= banda.login(sesion.getUsuario()).get(0);
+		Grupo u= banda.login(misesion.getUsuario()).get(0);
 		principal.addObject("banda", u);
 		return principal;
 	}	

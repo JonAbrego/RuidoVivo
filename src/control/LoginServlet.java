@@ -7,6 +7,9 @@ import hibernate.Integrantes;
 import hibernate.Usuario;
 import bean.MiSesion;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -18,6 +21,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/login.htm")
@@ -43,7 +47,7 @@ public class LoginServlet {
 	@RequestMapping(method=RequestMethod.POST)
 	public String showLogin(@RequestParam("user") String usuario,@RequestParam("pass") String contrasena){
 		if(usu.login(usuario).size()==0 && grp.login(usuario).size()==0){
-			//Si no existe en alguno de los 2 redirecciona a la principal
+			//Si no existe en alguno de los 2 redirecciona a la principal			
 			return "redirect:principal.htm";
 		}else{			
 			//Como vio que si existe, verifica en cual se encuentra, si la lista de usuarios es 
@@ -105,9 +109,18 @@ public class LoginServlet {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, params={"addGroup"})
-	public String goodGroup(@RequestParam("dateG") String[] nombre){		
+	public String goodGroup(@RequestParam("logo") MultipartFile logob, @RequestParam("dateG") String[] nombre){		
 		if(grp.login(nombre[0]).size() == 0){
-			Grupo g = new Grupo(nombre[0],nombre[1],nombre[2],nombre[3]);
+			String path = "images/"+logob.getOriginalFilename();
+			try{
+				byte[] bytes = logob.getBytes();
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream("Workspaces/MyEclipse 2015/RuidoVivo/WebRoot/images/"+ logob.getOriginalFilename()));
+				stream.write(bytes);
+				stream.close();
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+			}
+			Grupo g = new Grupo(nombre[0],nombre[1],path,nombre[2]);
 			grp.registro(g);
 			misesion.setUsuario(g.getNombre());
 			return "redirect:grupo.htm";		
@@ -117,11 +130,20 @@ public class LoginServlet {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, params={"addEvento"})
-	public String newEvent(@RequestParam("evento") String[] datos){
+	public String newEvent(@RequestParam("logo") MultipartFile logob, @RequestParam("evento") String[] datos){
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-		try {				
-			grp.registroE(new Evento(datos[0],datos[1],formatter.parse(datos[2]),Double.parseDouble(datos[3]),datos[4]));
-			return "inicio_grupo";
+		try {
+			String path = "images/"+logob.getOriginalFilename();
+			try{
+				byte[] bytes = logob.getBytes();
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream("Workspaces/MyEclipse 2015/RuidoVivo/WebRoot/images/"+ logob.getOriginalFilename()));
+				stream.write(bytes);
+				stream.close();
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+			}
+			grp.registroE(new Evento(path,datos[0],datos[1],formatter.parse(datos[2]),Double.parseDouble(datos[3]),datos[4], null, null));
+			return "redirect:grupo.htm";
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return "inicio_grupo";

@@ -20,13 +20,14 @@ import bean.MiSesion;
 public class EditarUsuarioServlet {	
 
 	@Autowired
-	private MiSesion sesion;
+	private MiSesion misesion;
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
 	
 	@RequestMapping(method=RequestMethod.POST, params={"editUser"})
 	public String newEvent(@RequestParam("datos") String[] datosn){
-		String correo = sesion.getUsuario();
+		String correo = misesion.getUsuario();
+		misesion.setUsuario(null);
 		Usuario u= usu.login(correo).get(0);
 		if(datosn.length>2){
 			if(u.getContrasena().equals(datosn[2])){
@@ -37,18 +38,19 @@ public class EditarUsuarioServlet {
 		}
 		usu.actualizaUsuarioName(correo, datosn[1]);
 		usu.actualizaUsuarioCorreo(correo, datosn[0]);
-		sesion.setUsuario(datosn[0]);
+		misesion.setUsuario(datosn[0]);
+		System.out.println(misesion.getUsuario());
 		return "redirect:usuario.htm";
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView showDatosUsuario(){
 		ModelAndView principal=new ModelAndView("inicio");
-		if(sesion.getUsuario()==null){
+		if(misesion.getUsuario()==null){
 			return principal;
 		}
 		ModelAndView usuarios=new ModelAndView("editUsuario");
-		Usuario u= usu.login(sesion.getUsuario()).get(0);
+		Usuario u= usu.login(misesion.getUsuario()).get(0);
 		usuarios.addObject("usuario", u);
 		return usuarios;
 	}	

@@ -18,7 +18,7 @@ import bean.MiSesion;
 public class UsuarioServlet {
 	
 	@Autowired
-	private MiSesion sesion;
+	private MiSesion misesion;
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
 	private ModelAndView model=new ModelAndView("inicio");
@@ -26,12 +26,12 @@ public class UsuarioServlet {
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView showRegistro(){
 		
-		if(sesion.getUsuario()==null){
+		if(misesion.getUsuario()==null){
 			model.setViewName("inicio");
 			return model;
 		}
 		model.setViewName("inicio_usuario");
-		Usuario u= usu.login(sesion.getUsuario()).get(0);
+		Usuario u= usu.login(misesion.getUsuario()).get(0);
 		model.addObject("nombre", u.getNombre());
 		model.addObject("asistencias", u.getAsistirs());
 		return model;

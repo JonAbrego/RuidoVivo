@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.MiSesion;
 
 @Controller
-@RequestMapping("/calendario.htm")
+@RequestMapping("/calendarioU.htm")
 
 public class CalendarioUsuario {
 	

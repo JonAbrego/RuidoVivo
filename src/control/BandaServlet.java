@@ -21,21 +21,22 @@ public class BandaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	private MiSesion sesion;
+	private MiSesion misesion;
 	
 	private OperacionesBanda grp= new OperacionesBanda();
 	private ModelAndView model=new ModelAndView();
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView verifica(){		
-		if(sesion.getUsuario()==null){
-			model.setViewName("principal");
+		if(misesion.getUsuario()==null){
+			model.setViewName("inicio");
 			return model;
 		}			
-			Grupo g= grp.login(sesion.getUsuario()).get(0);								
+			Grupo g= grp.login(misesion.getUsuario()).get(0);								
 			model.addObject("nombre", g.getNombre());
 			model.addObject("informacion",g.getInformacion());
 			model.addObject("integrantes",g.getIntegranteses());
+			model.addObject("logo", "<img src=\""+ g.getLogo() +"\" style=\"height:150px\">");
 			model.setViewName("inicio_grupo");
 			return model;
 	}
