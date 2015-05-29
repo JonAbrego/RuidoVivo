@@ -8,7 +8,6 @@ import hibernate.Usuario;
 import bean.MiSesion;
 
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -35,8 +35,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>También estamos en</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                             <li>También estamos en</li>
+                            <li><a href="https://www.facebook.com/RuidoVivo"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
@@ -188,8 +188,8 @@
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2015 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                  <div class="col-sm-6">
+                    Derechos Reservados
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

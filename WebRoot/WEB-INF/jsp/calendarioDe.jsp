@@ -35,8 +35,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                           <li>También estamos en</li>
+                            <li><a href="https://www.facebook.com/RuidoVivo"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
@@ -111,25 +111,13 @@
                                 <h3>Con motivo a los 20 años de aparición del 
                                 SKA en México ofreceremos un concierto totalmente 
                                 llendo de ambiente 
-                                para todos los amantes del SKA.</h3>
-                                <a class="btn btn-primary readmore" href="#">Read More <i class="fa fa-angle-right"></i></a>
+                                para todos los amantes del SKA.</h3>                                
                             </div>
                         </div>    
-                    </div><!--/.blog-item-->
-                                                                  
-                    <ul class="pagination pagination-lg">
-                        <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
-                    </ul><!--/.pagination-->
-                </div><!--/.col-md-8-->
+                    </div><!--/.blog-item-->                                                                                   
 
                 <aside class="col-md-3">
-                    <div class="widget search">
-                        <form role="form">
-                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
-                        </form>
-                    </div><!--/.search-->
+               
     				
     				<div class="widget archieve">
                         <h3>Archieve</h3>
@@ -151,8 +139,8 @@
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2015 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                 <div class="col-sm-6">
+                    Derechos Reservados
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

@@ -34,8 +34,8 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li>También estamos en</li>
+                            <li><a href="https://www.facebook.com/RuidoVivo"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-xs-8">
@@ -113,7 +113,7 @@
                             <div class="form-group">
                                 <label for="logo" class="col-sm-2 control-label">Logo de la banda </label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="logo" class="form-control" id="logo" src="Workspaces/MyEclipse 2015/RuidoVivo/WebRoot/${banda.logo}" accept="image/*">
+                                    <input type="file" name="logo" class="form-control" id="logo" src="${banda.logo}" accept="image/*">
                                 </div>
                             </div>
                             <!-- Agrege esto de igual forma que usuario -->
@@ -148,8 +148,8 @@
  <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                  <div class="col-sm-6">
+                    Derechos Reservados
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
