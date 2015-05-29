@@ -21,8 +21,7 @@ public class PrincipalServlet {
 		if(misesion.getUsuario()!=null){
 			return "redirect:login.htm";
 		}
-		misesion.setUsuario(null);
-		return "principal";
+		return "redirect:principal.htm";
 	}
 
 }

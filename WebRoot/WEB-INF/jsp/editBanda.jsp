@@ -92,7 +92,7 @@
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab">
-                        <form class="form-horizontal" id="registro1" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/editarBanda.htm">
+                        <form class="form-horizontal" id="registro1" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/editarBanda.htm" enctype="multipart/form-data">
 
                           <div class="center">        
                                 <h2>Actualizar Banda</h2>
@@ -113,7 +113,7 @@
                             <div class="form-group">
                                 <label for="logo" class="col-sm-2 control-label">Logo de la banda </label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="datos" class="form-control" id="logo" accept="image/*">
+                                    <input type="file" name="logo" class="form-control" id="logo" src="Workspaces/MyEclipse 2015/RuidoVivo/WebRoot/${banda.logo}" accept="image/*">
                                 </div>
                             </div>
                             <!-- Agrege esto de igual forma que usuario -->

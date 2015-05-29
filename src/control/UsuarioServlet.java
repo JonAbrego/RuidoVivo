@@ -36,6 +36,7 @@ public class UsuarioServlet {
 			return model;
 		}catch(Exception e){
 			model.setViewName("inicio");
+			misesion.setUsuario(null);
 			return model;
 		}
 	}

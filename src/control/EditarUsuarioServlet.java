@@ -48,7 +48,8 @@ public class EditarUsuarioServlet {
 		}
 		if(u.getNombre()!=datosn[1])
 			usu.actualizaUsuarioName(correo, datosn[1]);
-		if(u.getNombre()!=datosn[0]){
+		if(u.getCorreo()!=datosn[0]){
+			misesion.setUsuario(null);
 			usu.actualizaUsuarioCorreo(correo, datosn[0]);			
 			misesion.setUsuario(datosn[0]);
 		}

@@ -1,12 +1,12 @@
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Ruido Vivo | Acerca</title>
+    <title>Registro | Ruido Vivo</title>
 	
 	<!-- core CSS -->
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -137,7 +137,7 @@
         			
         			
         			<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledBy="profile-tab">
-          				<form class="form-horizontal" id="registro2" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/login.htm">
+          				<form class="form-horizontal" name="registroBanda" id="registro2" onsubmit="return myFunction()"  method="post" action="${pageContext.request.contextPath}/login.htm" enctype="multipart/form-data">
 
             				<div class="center">        
                 				<h2>Registro de Banda</h2>
@@ -157,7 +157,7 @@
             				<div class="form-group">
               					<label for="logo" class="col-sm-2 control-label">Logo de la banda </label>
               					<div class="col-sm-10">
-                					<input type="file" name="dateG" class="form-control" id="logo" accept="image/*">
+                					<input type="file" name="logo" class="form-control" id="logo" accept="image/*">
               					</div>
             				</div>
             				<div class="form-group">

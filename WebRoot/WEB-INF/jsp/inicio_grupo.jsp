@@ -98,7 +98,7 @@
                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Historial</a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Crear evento</a></li>
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Editar evento</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Agregar Integrante</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Editar Integrantes</a></li>
                                 </ul>
                             </div>
 
@@ -110,7 +110,7 @@
                                                 <div class="container col-md-10">
                                                 	<div class="row">
                                                 		<div class="col-md-2">
-                                                			<img src="images/logo.png" style="height:150px">
+                                                			${logo}
                                                 		</div>
                                                 		<div class="col-md-offset-2 col-md-4">
 	                                                		<div class="text-center">
@@ -176,14 +176,14 @@
                                      <div class="tab-pane" id="tab3">
                                         <div class="media">
                                             <div class="media-body">
-                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="registro1" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm">
+                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="registro1" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm" enctype="multipart/form-data">
 
                                             	  	<div class="center">        
                                             	   		<h2>Crear Evento</h2>
                                             	  	</div>
 
                                             	  	<div class="form-group">
-              											<label for="logo" class="col-sm-3 control-label">Logo de la banda </label>
+              											<label for="logo" class="col-sm-3 control-label">Imagen del Evento </label>
               											<div class="col-sm-9">
                 											<input type="file" name="logo" class="form-control" id="logo" accept="image/*" required>
               											</div>
@@ -196,7 +196,7 @@
                                             	  	</div>
                                             	  	<div class="form-group">
               											<label for="descripcion" class="col-sm-3">Descripción </label>
-                										<textarea class="form-control textarea-registro" name="evento" class="form-control" id="descripcion" placeholder="Escribe una descripcion sobre el evento" rows=8></textarea>
+                										<textarea class="form-control textarea-registro" name="evento" class="form-control" id="descripcion" placeholder="Escribe una descripcion sobre el evento" rows=4></textarea>
             										</div>
                                             	  	<div class="form-group">
                                             	    	<label for="fecha" class="col-sm-2 control-label">Fecha </label>
@@ -281,6 +281,33 @@
                                      <div class="tab-pane" id="tab5">
                                         <div class="media">
                                             <div class="media-body">
+                                                <form class="col-md-offset-2 col-md-7 form-horizontal" action="${pageContext.request.contextPath}/grupo.htm" method="POST">
+                                                    <table class="table table-hover table-responsive">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nombre</th>
+                                                                <th>Seleciona si lo quieres eliminar</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <c:forEach items="${integrantes}" var="integrante">
+                                                                <tr>
+                                                                    <td>
+                                                                        ${integrante.nombre}
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="checkbox" name="eliminar" value="${integrante.nombre}">
+                                                                    </td>
+                                                                </tr>
+                                                            </c:forEach>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-3 col-sm-10">
+                                                            <input type="submit" class="btn btn-primary reg" name="integrantes" value="Eliminar Integrantes">
+                                                        </div>
+                                                    </div>  
+                                                </form>
                                                 <form class="col-md-offset-1 col-md-9 form-horizontal" action="${pageContext.request.contextPath}/login.htm" method="POST">
                                                     <div class="center">        
                                                         <h2>Agregar Integrante</h2>
