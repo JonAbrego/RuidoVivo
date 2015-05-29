@@ -113,7 +113,7 @@
                             <div class="form-group">
                                 <label for="logo" class="col-sm-2 control-label">Logo de la banda </label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="logo" class="form-control" id="logo" src="Workspaces/MyEclipse 2015/RuidoVivo/WebRoot/${banda.logo}" accept="image/*">
+                                    <input type="file" name="logo" class="form-control" id="logo" src="${banda.logo}" accept="image/*">
                                 </div>
                             </div>
                             <!-- Agrege esto de igual forma que usuario -->
