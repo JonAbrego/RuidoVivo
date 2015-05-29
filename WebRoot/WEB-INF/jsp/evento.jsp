@@ -115,8 +115,7 @@
                                 </div>
                             </div>
                         </div><!--/.blog-item-->
-                                                                                                                                                                   
-                        
+                                                                                                                                                                         
 
                 <aside class="col-md-3">
                     
@@ -142,10 +141,10 @@
                         </ul>
                     </div><!--/.tags-->                                                          
                 </aside>     
+			</div>
+      </div><!--/.row-->
 
-            </div><!--/.row-->
-
-         </div><!--/.blog-->
+       </div><!--/.blog-->
 
     </section><!--/#blog-->
 

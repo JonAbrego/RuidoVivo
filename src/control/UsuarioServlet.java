@@ -21,20 +21,23 @@ public class UsuarioServlet {
 	private MiSesion misesion;
 	
 	private OperacionesUsuario usu = new OperacionesUsuario();
-	private ModelAndView model=new ModelAndView("inicio");
+	private ModelAndView model=new ModelAndView();
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView showRegistro(){
-		
-		if(misesion.getUsuario()==null){
+	public ModelAndView showRegistro(){	
+		try{
+			if(misesion.getUsuario()==null){
+				model.setViewName("inicio");
+				return model;
+			}
+			Usuario u= usu.login(misesion.getUsuario()).get(0);
+			model.setViewName("inicio_usuario");		
+			model.addObject("usuario", u);		
+			return model;
+		}catch(Exception e){
 			model.setViewName("inicio");
 			return model;
 		}
-		model.setViewName("inicio_usuario");
-		Usuario u= usu.login(misesion.getUsuario()).get(0);
-		model.addObject("nombre", u.getNombre());
-		model.addObject("asistencias", u.getAsistirs());
-		return model;
 	}
 	
 }

@@ -70,8 +70,8 @@ public class OperacionesBanda {
         System.out.println("Rows affected: " + rowCount);		             
 	}
 	
-	/*Update email*/
-	public void actualizaGrupoCorreo(String nombre, String nuevo){
+	/*Update inforamción*/
+	public void actualizaGrupoInformacion(String nombre, String nuevo){
 		Session s = HibernateSessionFactory.getSession();	
 		Transaction txt=null;
 		txt=s.beginTransaction();

@@ -73,7 +73,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/edit.htm">EditarCuenta</a></li>                                
+                                <li><a href="${pageContext.request.contextPath}/editarDatos.htm">EditarCuenta</a></li>                                
                                 <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
                             </ul>
                         </li>                       
@@ -92,7 +92,7 @@
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab">
-                        <form class="form-horizontal" id="editar"  method="post" action="${pageContext.request.contextPath}/edit.htm">
+                        <form class="form-horizontal" id="editar"  method="post" action="${pageContext.request.contextPath}/editarDatos.htm">
 
                             <div class="center">        
                                 <h2>Actualizar Datos</h2>
@@ -101,7 +101,7 @@
                             <div class="form-group">
                                 <label for="usuario" class="col-sm-2 control-label">Correo</label>
                                 <div class="col-sm-10">
-                                    <input type="email" value="${ usuario.correo }" name="datos" class="form-control" id="correo" placeholder="example@example.com" required>
+                                    <input type="email" value="${usuario.correo}" name="datos" class="form-control" id="correo" placeholder="example@example.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -124,10 +124,10 @@
                             <div class="form-group">
                             	<div class="row">
 	                                <div class="col-sm-offset-2 col-md-4">
-                                    	<input type="submit" class="btn btn-primary reg" name="editUser" id="editUser" value="Actualizar" disabled>
+                                    	<input type="submit" class="btn btn-primary reg" name="editUser" id="editUser" value="Actualizar" >
                                 	</div>
                                 	<div class="col-md-4">
-	                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/usuario.htm">Cancelar</a>
+	                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/login.htm">Cancelar</a>
                                 	</div>
                                 </div>
                             </div>

@@ -75,7 +75,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/editarBanda.htm">Configurar Cuenta</a></li>
+                                <li><a href="${pageContext.request.contextPath}/editar.htm">Configurar Cuenta</a></li>
                                 <li class=""><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>
                             </ul>
                         </li>                       
@@ -110,20 +110,20 @@
                                                 <div class="container col-md-10">
                                                 	<div class="row">
                                                 		<div class="col-md-2">
-                                                			${logo}
+                                                			<img src="images/logo.png" style="height:150px">
                                                 		</div>
                                                 		<div class="col-md-offset-2 col-md-4">
 	                                                		<div class="text-center">
 	                                                			<br>
 	                                                			<br>
-                                                				<h2 style="font-family:'Lato', sans-serif;color:black"> ${nombre}</h2>
+                                                				<h2 style="font-family:'Lato', sans-serif;color:black"> ${banda.nombre}</h2>
                                                 			</div>
                                                 		</div>
                                                 	</div>
                                                 	<div class="row">
                                                 		<div class="col-sm-12" style="margin-top:30px;min-height:200px;font-family:'Lato', sans-serif;font-size:18px">
                                                 			<div class="center">
-                                                				<p>${informacion}</p>
+                                                				<p>${banda.informacion}</p>
                                                 			</div>
                                                 		</div>
                                                 	</div>
@@ -176,7 +176,7 @@
                                      <div class="tab-pane" id="tab3">
                                         <div class="media">
                                             <div class="media-body">
-                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="creaEvento" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm" enctype="multipart/form-data">
+                                            	<form class="col-md-offset-1 col-md-9 form-horizontal" id="registro1" onsubmit="return myFunction()" method="post" action="${pageContext.request.contextPath}/login.htm">
 
                                             	  	<div class="center">        
                                             	   		<h2>Crear Evento</h2>
@@ -218,7 +218,7 @@
                                             	  	</div>
                                             	  	<div class="form-group">
                                             	    	<div class="col-sm-offset-3 col-sm-10">
-                                            	      		<input type="submit" class="btn btn-primary reg" name="addEvento" value="Crear Evento">
+                                            	      		<input type="submit" class="btn btn-primary reg" name="addEvento" value="Registrarme">
                                             	    	</div>
                                             	  	</div>
                                             	</form>

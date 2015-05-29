@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import bean.MiSesion;
 
 @Controller
-@RequestMapping("/acercaU.htm")
+@RequestMapping("/acerca.htm")
 
 public class AcercaUsuarioServlet {
 	

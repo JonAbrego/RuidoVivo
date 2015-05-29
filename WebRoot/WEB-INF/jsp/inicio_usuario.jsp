@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <ul class="social-share">
-                            <li>Tambien estamos en</li>
+                            <li>También estamos en</li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
                        <div class="social">
                             <div class="search">
                                 <form role="form" method="POST" action="${pageContext.request.contextPath}/busqueda.htm">
-                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" autocomplete="off">
+                                    <input id="autocomplete" type="search" class="search-form" name="banda" placeholder="Busca un grupo" >
                                     <i class="fa fa-search fa-inverse"></i>
                                 </form>
                            </div>
@@ -73,7 +73,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/edit.htm">EditarCuenta</a></li>                                
+                                <li><a href="${pageContext.request.contextPath}/editarDatos.htm">EditarCuenta</a></li>                                
                                 <li><a href="${pageContext.request.contextPath}/logout.htm">Salir</a></li>                                                       
                             </ul>
                         </li>                       
@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
-                    <h2>Bienvenido ${nombre}</h2> 
+                    <h2>Bienvenido ${usuario.nombre}</h2> 
                     <div class="tab-wrap">
                         <div class="media">
                             <div class="parrent pull-left">

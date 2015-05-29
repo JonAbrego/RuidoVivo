@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import bean.MiSesion;
 
@@ -26,11 +25,11 @@ public class EditarServlet {
 	public String sesionActiva(){
 		if(usu.login(misesion.getUsuario()).size()>0){			
 			return "redirect:edit.htm";
-		} else if(grp.login(misesion.getUsuario()).size()>0){			
+		} else if(grp.login(misesion.getUsuario()).size()>0){	
+			System.out.println("Este grupo va editar datos: "+misesion.getUsuario());
 			return "redirect:editarBanda.htm";
 		}		
 		return "redirect:principal.htm"; 
 	}
 	
-
 }

@@ -120,4 +120,8 @@ public class Grupo implements java.io.Serializable {
 	public void setIntegranteses(Set<Integrantes> integranteses) {
 		this.integranteses = integranteses;
 	}
+	
+	public String toString(){
+		return "Grupo["+nombre+"]";
+	}
 }

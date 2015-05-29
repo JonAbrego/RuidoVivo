@@ -1,9 +1,6 @@
 package control;
 
 import hibernate.Grupo;
-import javax.servlet.http.HttpServlet;
-
-
 import operaciones.OperacionesBanda;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +14,8 @@ import bean.MiSesion;
 @Controller
 @RequestMapping("/grupo.htm")
 
-public class BandaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
+public class BandaServlet {	
 	
 	@Autowired
 	private MiSesion misesion;
@@ -28,16 +25,21 @@ public class BandaServlet extends HttpServlet {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView verifica(){		
-		if(misesion.getUsuario()==null){
-			model.setViewName("inicio");
-			return model;
-		}			
-			Grupo g= grp.login(misesion.getUsuario()).get(0);								
-			model.addObject("nombre", g.getNombre());
-			model.addObject("informacion",g.getInformacion());
-			model.addObject("integrantes",g.getIntegranteses());
-			model.addObject("logo", "<img src=\""+ g.getLogo() +"\" style=\"height:150px\">");
+		try{
+			if(misesion.getUsuario()==null){
+				model.setViewName("principal");
+				return model;
+			}			
+			Grupo g= grp.login(misesion.getUsuario()).get(0);
+			System.out.println("Este grupo inicio sesion: "+g);
 			model.setViewName("inicio_grupo");
+			model.addObject("banda", g);
+			model.addObject("integrantes", g.getIntegranteses());			
 			return model;
+		}catch(Exception e){
+			System.out.println("Aqui fallo");
+			model.setViewName("inicio");
+			return model;			
+		}
 	}
 }
